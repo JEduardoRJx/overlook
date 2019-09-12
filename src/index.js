@@ -12,10 +12,13 @@ import './images/turing-logo.png'
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
+$('#main').show().siblings('section').hide();
+
 //Tab transitions
 $('.nav-icons').on('click', function () {
   $(this).addClass('tab-active');
-  console.log("main", $(this));
   $(this).siblings().removeClass('tab-active');
+  let attrValue = $(this).attr('href');
+  $(attrValue).show().siblings('section').hide();
 });
 

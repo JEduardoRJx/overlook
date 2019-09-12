@@ -50,8 +50,10 @@ h1 {
   font-size: 2em;
   height: 100%;
   background-color: #53405F;
+  color: #EAE7EB;
   align-items: center;
   display: flex;
+  text-decoration:none;
 }
 
 .tab-active {
@@ -78,6 +80,7 @@ aside {
 section {
   height: 100%;
   width: 100%;
+  padding: 25px
   // background-color: blue;
   // opacity: 0.2;
 }

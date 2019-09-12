@@ -9,18 +9,27 @@
     <nav>
       <h1>OverLook</h1>
       <div class="nav-wrapper">
-        <a class="nav-icons main-icon">Main</a>
-        <a class="nav-icons orders-icon">Orders</a>
-        <a class="nav-icons rooms-icon">Rooms</a>
-        <a class="nav-icons customer-icon">Customer</a>
+        <a class="nav-icons main-icon tab-active" href="#main">Main</a>
+        <a class="nav-icons orders-icon" href="#orders">Orders</a>
+        <a class="nav-icons rooms-icon" href="#rooms">Rooms</a>
+        <a class="nav-icons customer-icon" href="#customer">Customer</a>
       </div>
     </nav>
     <main>
-      <aside>
+      <aside id="aside">
         Aside
       </aside>
-      <section>
-        Section
+      <section class="section-active" id="main">
+        MAIN section
+      </section>
+      <section id="orders">
+        ORDERS section
+      </section>
+      <section id="rooms">
+        ROOMS section
+      </section>
+      <section id="customer">
+        CUSTOMER section
       </section>
     </main>
 
