@@ -12,31 +12,10 @@ import './images/turing-logo.png'
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
-$('.main-icon').on('click', () => {
-  $('a.main-icon').addClass('tab-active');
-  $('a.orders-icon').removeClass('tab-active');
-  $('a.rooms-icon').removeClass('tab-active')
-  $('a.customer-icon').removeClass('tab-active')
-
+//Tab transitions
+$('.nav-icons').on('click', function () {
+  $(this).addClass('tab-active');
+  console.log("main", $(this));
+  $(this).siblings().removeClass('tab-active');
 });
 
-$('.orders-icon').on('click', () => {
-  $('a.orders-icon').toggleClass('tab-active');
-  $('a.main-icon').removeClass('tab-active');
-  $('a.rooms-icon').removeClass('tab-active');
-  $('a.customer-icon').removeClass('tab-active');
-});
-
-$('.rooms-icon').on('click', () => {
-  $('a.rooms-icon').toggleClass('tab-active');
-  $('a.main-icon').removeClass('tab-active');
-  $('a.orders-icon').removeClass('tab-active');
-  $('a.customer-icon').removeClass('tab-active');
-});
-
-$('.customer-icon').on('click', () => {
-  $('a.customer-icon').toggleClass('tab-active');
-  $('a.main-icon').removeClass('tab-active');
-  $('a.orders-icon').removeClass('tab-active');
-  $('a.rooms-icon').removeClass('tab-active');
-});
