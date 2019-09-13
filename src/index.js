@@ -22,3 +22,9 @@ $('.nav-icons').on('click', function () {
   $(attrValue).show().siblings('section').hide();
 });
 
+function getDate() {
+  let date = new Date();
+  return `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`
+}
+
+$('h2').text(getDate())
