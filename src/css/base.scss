@@ -82,10 +82,28 @@ aside {
   height: 100%;
   background-color: rgba(83, 64, 95, 0.5);
   border-radius: 5px;
+  padding: 10px;
+  color: #EAE7EB;
   // opacity: 0.5;
   // position: fixed; //fixed static absolute relative initial
   // bottom: -1;
   // z-index: -4;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  border: none;
+  height: 30px;
+  font-size: 1em;
+  padding: 0 5px;
+  margin: 15px 0;
+  border-radius: 5px;
+
 }
 
 section {
