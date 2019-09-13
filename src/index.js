@@ -27,4 +27,4 @@ function getDate() {
   return `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`
 }
 
-$('h2').text(getDate())
+$('.todays-date').text(getDate())
