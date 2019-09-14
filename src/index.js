@@ -9,7 +9,10 @@ import './css/base.scss';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 // import './images/turing-logo.png'
-import domUpdates from './domUpdates';
+import domUpdates from '../src/domUpdates';
+import Rooms from '../src/rooms.js';
+import Main from '../src/main.js';
+import Orders from './orders';
 
 
 console.log('This is the JavaScript entry file - your code begins here.');
@@ -19,6 +22,8 @@ let roomsResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/ro
 let bookingResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings').then(response => response.json());;
 let roomServiceResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices').then(response => response.json());
 let hotelData = {users: [], rooms: [], bookings: [], roomServices: []};
+let main, rooms, orders;
+
 
 Promise.all([usersResponse, roomsResponse, bookingResponse, roomServiceResponse])
   .then(data => {
@@ -28,10 +33,7 @@ Promise.all([usersResponse, roomsResponse, bookingResponse, roomServiceResponse]
     hotelData['roomServices'] = data[3].roomServices
     return hotelData
   })
-  .then(hotelData => {
-    customer
-  })
-  .then(hotelData => console.log("hotelData", hotelData))
+  .then(hotelData => loadTabs(hotelData))
   .catch(error => console.log(error));
 
 //Hide all the sections besides the MAIN section on page load
@@ -48,16 +50,41 @@ $('.nav-icons').on('click', function () {
 
 let getDate = () => {
   let date = new Date();
-  return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+  date = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+  date = date.split('/').map(num => (num < 10) ? '0' + num : num).join('/')
+  console.log("date", date)
+  return date;
 }
 
 // let bookings = new Bookings()
 // function displayTotalRoomsAvailable(date) {
-domUpdates.displayTotalRoomsAvailable(getDate());
+//   let totalRoomsAvail = rooms.getTotalRoomsAvailalbe(date)
+//   domUpdates.displayTotalRoomsAvailable(totalRoomsAvail);
 // }
 
-$('.todays-date').text(getDate)
+// displayTotalRoomsAvailable(getDate())
 
-// function getRoomsAvailalbeToday(getDate()) {
-//   return `${bookings.filter(booked => booked.date !== date).length}`
-// }
+// $('.todays-date').text(getDate)
+
+// console.log(getDate())
+
+function loadTabs() {
+  main = new Main(hotelData);
+  orders = new Orders(hotelData);
+  rooms = new Rooms(hotelData);
+
+  let totalRoomsAvail = rooms.getTotalRoomsAvailable(getDate());
+  let percentRoomsOccupied = ((50 - totalRoomsAvail) / 50)* 100
+  domUpdates.displayDate(getDate());
+  domUpdates.displayTotalRoomsAvailable(totalRoomsAvail);
+  domUpdates.displayPercentRoomsOccupied(percentRoomsOccupied)
+  getTodaysTotalRevenue(rooms) 
+}
+
+function getTodaysTotalRevenue(rooms) {
+  rooms.getTodaysRooms();
+  rooms.calculateTodaysTotalRevenue();
+  console.log(rooms.todaysTotalRevenue);
+}
+
+loadTabs()
