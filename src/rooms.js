@@ -15,8 +15,6 @@ class Rooms {
   getTotalRoomsAvailable(date) {
     let totalBookedToday = this.getTodaysBookings(date)
     let roomsAvailableToday = 50 - totalBookedToday;
-    // console.log(this.todaysBookings)
-    console.log(this.todaysBookings[0]);
     return roomsAvailableToday;
   }
 
