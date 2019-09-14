@@ -11,7 +11,11 @@ import './css/base.scss';
 import './images/turing-logo.png'
 
 console.log('This is the JavaScript entry file - your code begins here.');
+//CODE BELOW
 
+// let 
+
+//Hide all the sections besides the MAIN section on page load
 $('#main').show().siblings('section').hide();
 
 //Tab transitions
@@ -22,9 +26,14 @@ $('.nav-icons').on('click', function () {
   $(attrValue).show().siblings('section').hide();
 });
 
-function getDate() {
+
+let getDate = () => {
   let date = new Date();
-  return `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`
+  return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
 }
 
-$('.todays-date').text(getDate())
+$('.todays-date').text(getDate)
+
+// function getRoomsAvailalbeToday(getDate()) {
+//   return `${bookings.filter(booked => booked.date !== date).length}`
+// }
