@@ -50,23 +50,10 @@ $('.nav-icons').on('click', function () {
 
 let getDate = () => {
   let date = new Date();
-  date = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
-  date = date.split('/').map(num => (num < 10) ? '0' + num : num).join('/')
-  console.log("date", date)
+  date = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+  date = date.split('/').map(num => (num < 10) ? '0' + num : num).join('/');
   return date;
 }
-
-// let bookings = new Bookings()
-// function displayTotalRoomsAvailable(date) {
-//   let totalRoomsAvail = rooms.getTotalRoomsAvailalbe(date)
-//   domUpdates.displayTotalRoomsAvailable(totalRoomsAvail);
-// }
-
-// displayTotalRoomsAvailable(getDate())
-
-// $('.todays-date').text(getDate)
-
-// console.log(getDate())
 
 function loadTabs() {
   main = new Main(hotelData);
@@ -78,13 +65,15 @@ function loadTabs() {
   domUpdates.displayDate(getDate());
   domUpdates.displayTotalRoomsAvailable(totalRoomsAvail);
   domUpdates.displayPercentRoomsOccupied(percentRoomsOccupied)
-  getTodaysTotalRevenue(rooms) 
+  getTodaysTotalRevenue(rooms, orders) 
 }
 
-function getTodaysTotalRevenue(rooms) {
+function getTodaysTotalRevenue(rooms, orders) {
   rooms.getTodaysRooms();
   rooms.calculateTodaysTotalRevenue();
-  console.log(rooms.todaysTotalRevenue);
+  orders.calculateTodaysTotalRevenue(getDate());
+  let totalRev = rooms.todaysTotalRevenue + orders.todaysTotalRevenue ;
+  domUpdates.displayTotalRevenue(totalRev);
 }
 
 loadTabs()
