@@ -84,6 +84,8 @@ aside {
   border-radius: 5px;
   padding: 10px;
   color: #EAE7EB;
+  display: flex;
+  flex-direction: column;
   // opacity: 0.5;
   // position: fixed; //fixed static absolute relative initial
   // bottom: -1;
@@ -117,6 +119,7 @@ section {
 .main-section {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .main-room-wrapper {
@@ -172,4 +175,22 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.all-customers {
+  height: 100%;
+  width: 100%;
+  border: 2px #EAE7EB solid;
+  border-radius: 5px;
+}
+
+.individual-customer {
+  font-size: 1.25em;
+  text-align: center;
+  // background-color: blue;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-top: 1px #EAE7EB solid;
+  border-bottom: 1px #EAE7EB solid;
 }
