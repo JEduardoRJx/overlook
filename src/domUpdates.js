@@ -21,6 +21,12 @@ export default {
   
   displayTotalRevenue(totalRev) {
     $('.total-revenue').text(`$${totalRev}`);
+  },
+
+  displayAllCustomers(customers) {
+    customers.allCustomers.forEach(customer => {
+      $('.all-customers').append(`<div class="individual-customer">${customer.name}</div>`)
+    })
   }
 
 }

@@ -93,8 +93,7 @@ function searchCustomer() {
   let allCustomers = Array.from($('.all-customers').children());
   allCustomers.forEach(customer => {
     if($(customer).text().toUpperCase().includes(inputVal)) {
-      $(customer).show(customer).siblings().hide()
+      $(customer).show(customer).siblings().hide();
     }
-  })
-
+  });
 }
