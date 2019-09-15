@@ -26,7 +26,11 @@ export default {
   displayAllCustomers(customers) {
     customers.allCustomers.forEach(customer => {
       $('.all-customers').append(`<div class="individual-customer">${customer.name}</div>`)
-    })
+    });
+  },
+
+  displaySelectCustomer() {
+    $('.no-customer').show();
   }
 
 }

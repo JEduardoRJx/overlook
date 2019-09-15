@@ -196,3 +196,25 @@ section {
   border-bottom: 1px #EAE7EB solid;
   justify-content: center;
 }
+
+
+
+#customer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.no-customer {
+  color: #EAE7EB;
+  font-size: 3.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(83, 64, 95, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  width: 70%;
+  height: 33%;
+}
