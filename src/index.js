@@ -55,15 +55,16 @@ let getDate = () => {
   date = date.split('/').map(num => (num < 10) ? '0' + num : num).join('/');
   return date;
 }
+loadTabs()
 
 function loadTabs() {
   main = new Main(hotelData);
   orders = new Orders(hotelData);
   rooms = new Rooms(hotelData);
   customers = new Customers(hotelData);
-  console.log(customers.allCustomers);
   displayRoomInfo(rooms);
   getTodaysTotalRevenue(rooms, orders);
+  displayCustomersAside(customers)
 }
 
 function displayRoomInfo(rooms) {
@@ -82,4 +83,18 @@ function getTodaysTotalRevenue(rooms, orders) {
   domUpdates.displayTotalRevenue(totalRev);
 }
 
-loadTabs()
+function displayCustomersAside(customers) {
+  domUpdates.displayAllCustomers(customers);
+  $('.search-customer-input').keyup(searchCustomer);
+}
+
+function searchCustomer() {
+  let inputVal = $('.search-customer-input').val().toUpperCase();
+  let allCustomers = Array.from($('.all-customers').children());
+  allCustomers.forEach(customer => {
+    if($(customer).text().toUpperCase().includes(inputVal)) {
+      $(customer).show(customer).siblings().hide()
+    }
+  })
+
+}
