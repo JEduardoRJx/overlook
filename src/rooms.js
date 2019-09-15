@@ -2,31 +2,32 @@ class Rooms {
   constructor(data) {
     this.totalRooms = data.rooms;
     this.totalBookings = data.bookings;
-    this.todayRooms = [];
-    this.todaysBookings = [];
+    this.roomsBookedToday = [];
+    this.bookingsToday = [];
     this.todaysTotalRevenue = 0;
   }
 
   getTodaysBookings(date) {
-    this.todaysBookings = this.totalBookings.filter(booked => booked.date === date)
-    return this.todaysBookings.length
+    this.bookingsToday = this.totalBookings.filter(booked => booked.date === date)
+    return this.bookingsToday.length
   }
 
   getTotalRoomsAvailable(date) {
-    let totalBookedToday = this.getTodaysBookings(date)
-    let roomsAvailableToday = 50 - totalBookedToday;
+    let totalBookedToday = this.getTodaysBookings(date);
+    let roomsAvailableToday = this.totalRooms.length - totalBookedToday;
     return roomsAvailableToday;
   }
 
   getTodaysRooms() {
     this.todaysRooms = this.totalRooms.reduce((acc, room) => {
-      this.todaysBookings.forEach(bookedRoom => {
+      this.bookingsToday.forEach(bookedRoom => {
         if (room.number === bookedRoom.roomNumber) {
           acc.push(room);
         }
       });
       return acc;
     }, []);
+    return this.todaysRooms;
   }
 
   calculateTodaysTotalRevenue() {
