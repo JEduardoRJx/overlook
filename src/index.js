@@ -64,7 +64,8 @@ function loadTabs() {
   customers = new Customers(hotelData);
   displayRoomInfo(rooms);
   getTodaysTotalRevenue(rooms, orders);
-  displayCustomersAside(customers)
+  displayCustomersAside(customers);
+  displayIndividualCustomer(customers);
 }
 
 function displayRoomInfo(rooms) {
@@ -79,7 +80,7 @@ function getTodaysTotalRevenue(rooms, orders) {
   rooms.getRoomsBookedToday();
   rooms.calculateTodaysTotalRevenue();
   orders.calculateTodaysTotalRevenue(getDate());
-  let totalRev = rooms.todaysTotalRevenue + orders.todaysTotalRevenue ;
+  let totalRev = rooms.todaysTotalRevenue + orders.todaysTotalRevenue;
   domUpdates.displayTotalRevenue(totalRev);
 }
 
@@ -96,4 +97,12 @@ function searchCustomer() {
       $(customer).show(customer).siblings().hide();
     }
   });
+}
+
+function displayIndividualCustomer(customers) {
+  console.log('here');
+  if (Object.keys(customers.customer).length === 0) {
+    console.log("here2");
+    domUpdates.displaySelectCustomer()
+  }
 }

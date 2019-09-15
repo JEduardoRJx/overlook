@@ -1,9 +1,10 @@
 class Customers {
   constructor(data) {
-    this.allCustomers = data.users
+    this.allCustomers = data.users;
+    this.customer = [];
   }
 
-  
+
 
 }
 
