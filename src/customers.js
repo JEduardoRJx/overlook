@@ -1,7 +1,9 @@
 class Customers {
   constructor(data) {
-    this.customers = data.users
+    this.allCustomers = data.users
   }
+
+  
 
 }
 
