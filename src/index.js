@@ -60,7 +60,7 @@ function loadTabs() {
   orders = new Orders(hotelData);
   rooms = new Rooms(hotelData);
 
-  let totalRoomsAvail = rooms.getTotalRoomsAvailable(getDate());
+  let totalRoomsAvail = rooms.getTotalRoomsAvailableToday(getDate());
   let percentRoomsOccupied = ((50 - totalRoomsAvail) / 50)* 100
   domUpdates.displayDate(getDate());
   domUpdates.displayTotalRoomsAvailable(totalRoomsAvail);
@@ -69,7 +69,7 @@ function loadTabs() {
 }
 
 function getTodaysTotalRevenue(rooms, orders) {
-  rooms.getTodaysRooms();
+  rooms.getRoomsBookedToday();
   rooms.calculateTodaysTotalRevenue();
   orders.calculateTodaysTotalRevenue(getDate());
   let totalRev = rooms.todaysTotalRevenue + orders.todaysTotalRevenue ;
