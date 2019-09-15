@@ -31,7 +31,7 @@ class Rooms {
   }
 
   calculateTodaysTotalRevenue() {
-    this.todaysTotalRevenue = this.totalRooms.reduce((acc, room) => {
+    this.todaysTotalRevenue = this.roomsBookedToday.reduce((acc, room) => {
       return acc += room.costPerNight;
     }, 0);
     this.todaysTotalRevenue = parseFloat(this.todaysTotalRevenue.toFixed(2));
