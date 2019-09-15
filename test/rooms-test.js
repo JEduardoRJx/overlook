@@ -13,8 +13,12 @@ describe('Rooms', () => {
     expect(Rooms).to.be.a('function');
   });
 
-  it('shuld return length of rooms', ()=> {
+  it('shuld return amount of rooms', ()=> {
     expect(rooms.totalRooms.length).to.equal(20);
+  });
+
+  it('should return amount of totalBookings', () => {
+    expect(rooms.totalBookings.length).to.equal(20);
   });
 
   it('should return a booking user', ()=> {
@@ -27,6 +31,30 @@ describe('Rooms', () => {
 
   it('should return a booking room number', ()=> {
     expect(rooms.totalBookings[0].roomNumber).to.equal(5);
+  });
+
+  it('should return room number', ()=> {
+    expect(rooms.totalRooms[0].number).to.equal(1);
+  });
+
+  it('should return room type', ()=> {
+    expect(rooms.totalRooms[0].roomType).to.equal('residential suite');
+  });
+
+  it('should return if room has a bidet', ()=> {
+    expect(rooms.totalRooms[0].bidet).to.equal(false);
+  });
+
+  it('should return rooms bedsize', ()=> {
+    expect(rooms.totalRooms[0].bedSize).to.equal('twin');
+  });
+
+  it('should return rooms number of beds', ()=> {
+    expect(rooms.totalRooms[0].numBeds).to.equal(1);
+  });
+
+  it('should return rooms number of beds', ()=> {
+    expect(rooms.totalRooms[0].costPerNight).to.equal(265.03);
   });
 
   it('should return total bookings today', ()=> {
