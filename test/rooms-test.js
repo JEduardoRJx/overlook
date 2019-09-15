@@ -1,12 +1,12 @@
 import chai from 'chai';
 import Rooms from '../src/rooms.js';
-import sampleData from '../src/sampleData.js'
+import sampleData from '../src/sampleData.js';
 const expect = chai.expect;
 
 describe('Rooms', () => {
   let rooms;
   beforeEach(() => {
-    rooms = new Rooms(sampleData)
+    rooms = new Rooms(sampleData);
   });
 
   it('should be a function', () => {
@@ -30,17 +30,24 @@ describe('Rooms', () => {
   });
 
   it('should return total bookings today', ()=> {
-    expect(rooms.getTotalBookingsToday('2019/10/19')).to.equal(1)
-  })
+    expect(rooms.getTotalBookingsToday('2019/10/19')).to.equal(1);
+  });
 
   it('should return total rooms available', () => {
     expect(rooms.getTotalRoomsAvailableToday('2019/10/19')).to.equal(19);
   });
 
-  it.skip('should get rooms booked today', () => {
+  it('should get number of rooms booked today', () => {
     rooms.getTotalBookingsToday('2019/10/19');
     rooms.getRoomsBookedToday();
-    expect(rooms.todayRooms.length).to.equal(1)
-  })
+    expect(rooms.roomsBookedToday.length).to.equal(1);
+  });
+
+  it('should calculate todays total revenue', ()=> {
+    rooms.getTotalBookingsToday('2019/10/19');
+    rooms.getRoomsBookedToday();
+    rooms.calculateTodaysTotalRevenue();
+    expect(rooms.todaysTotalRevenue).to.equal(246.65);
+  });
 
 });
