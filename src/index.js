@@ -10,9 +10,10 @@ import './css/base.scss';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 // import './images/turing-logo.png'
 import domUpdates from '../src/domUpdates';
-import Rooms from '../src/rooms.js';
 import Main from '../src/main.js';
-import Orders from './orders';
+import Rooms from '../src/rooms.js';
+import Orders from '../src/orders.js';
+import Customers from '../src/customers.js';
 
 
 console.log('This is the JavaScript entry file - your code begins here.');
@@ -22,7 +23,7 @@ let roomsResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/ro
 let bookingResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings').then(response => response.json());;
 let roomServiceResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices').then(response => response.json());
 let hotelData = {users: [], rooms: [], bookings: [], roomServices: []};
-let main, rooms, orders;
+let main, rooms, orders, customers;
 
 
 Promise.all([usersResponse, roomsResponse, bookingResponse, roomServiceResponse])
@@ -59,13 +60,18 @@ function loadTabs() {
   main = new Main(hotelData);
   orders = new Orders(hotelData);
   rooms = new Rooms(hotelData);
+  customers = new Customers(hotelData);
+  console.log(customers.allCustomers);
+  displayRoomInfo(rooms);
+  getTodaysTotalRevenue(rooms, orders);
+}
 
+function displayRoomInfo(rooms) {
   let totalRoomsAvail = rooms.getTotalRoomsAvailableToday(getDate());
-  let percentRoomsOccupied = ((50 - totalRoomsAvail) / 50)* 100
+  let percentRoomsOccupied = ((50 - totalRoomsAvail) / 50)* 100;
   domUpdates.displayDate(getDate());
   domUpdates.displayTotalRoomsAvailable(totalRoomsAvail);
-  domUpdates.displayPercentRoomsOccupied(percentRoomsOccupied)
-  getTodaysTotalRevenue(rooms, orders) 
+  domUpdates.displayPercentRoomsOccupied(percentRoomsOccupied);
 }
 
 function getTodaysTotalRevenue(rooms, orders) {
