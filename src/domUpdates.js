@@ -25,12 +25,21 @@ export default {
 
   displayAllCustomers(customers) {
     customers.allCustomers.forEach(customer => {
-      $('.all-customers').append(`<div class="individual-customer">${customer.name}</div>`)
+      $('.all-customers').append(`<div class="individual-customer" id="${customer.id}">${customer.name}</div>`)
     });
   },
 
-  displaySelectCustomer() {
+  displayNoCustomer() {
     $('.no-customer').show();
+  },
+
+  displayCustomerName(customerName) {
+    console.log(customerName)
+    $('.no-customer').hide ();
+    $('.display-name-background').show()
+    $('.display-name').text(customerName)
+    //AM HERE 9/15/2019
+    // $('.display-name').text(customerName);
   }
 
 }
