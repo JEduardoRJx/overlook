@@ -15,6 +15,8 @@ import Rooms from '../src/rooms.js';
 import Orders from '../src/orders.js';
 import Customers from '../src/customers.js';
 
+import sampleData from '../src/sampleData.js'
+
 
 console.log('This is the JavaScript entry file - your code begins here.');
 //CODE BELOW
@@ -65,7 +67,7 @@ function loadTabs() {
   displayRoomInfo(rooms);
   getTodaysTotalRevenue(rooms, orders);
   displayCustomersAside(customers);
-  displayIndividualCustomer(customers);
+  selectingACustomer(customers);
 }
 
 function displayRoomInfo(rooms) {
@@ -99,10 +101,18 @@ function searchCustomer() {
   });
 }
 
-function displayIndividualCustomer(customers) {
-  console.log('here');
+function selectingACustomer(customers) {
+  console.log('here', customers)
   if (Object.keys(customers.customer).length === 0) {
-    console.log("here2");
-    domUpdates.displaySelectCustomer()
+    domUpdates.displayNoCustomer();
   }
+
+  $('.individual-customer').on('click', (event) => {
+    console.log(parseInt(event.currentTarget.id))
+    let customerID = parseInt(event.currentTarget.id);
+    customers.selectCustomer(customerID);
+    console.log(customers.customer.name)
+    domUpdates.displayCustomerName(customers.customer.name);
+  });
+  // selectingACustomer(customers);
 }
