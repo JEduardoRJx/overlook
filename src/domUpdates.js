@@ -71,7 +71,11 @@ export default {
   },
 
   displayTotalRoomServiceAmountEver(totalAmountForRoomServiceEver) {
-    $('.display-amount-room-service-ever').text(`$${totalAmountForRoomServiceEver}`);
+    if (totalAmountForRoomServiceEver === 0){
+      $('.display-amount-room-service-ever').text(`No Valid Data Exists`);
+    } else {
+      $('.display-amount-room-service-ever').text(`$${totalAmountForRoomServiceEver}`);
+    }
   }
 
 }
