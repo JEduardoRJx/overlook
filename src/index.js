@@ -129,14 +129,24 @@ function addCustomer(customers) {
 
 //ORDERS
 function handleOrders(orders) {
-  displayAllordersForRoomService(orders, getDate())
+  displayAllordersForRoomService(orders, getDate());
+  displayRoomServiceOrdersAnyDay(orders);
 }
 
 function displayAllordersForRoomService(orders, date) {
-  console.log("hey", orders)
   orders.getAllOrdersForRoomServiceToday(date);
   domUpdates.displayAllOrdersForRoomServiceToday(orders.allOrdersForRoomServiceToday);
 }
 
-
+function displayRoomServiceOrdersAnyDay(orders) {
+  $(document).ready(function() {
+    $('.room-service-any-day-btn').on('click', () => {
+      if($('.room-service-any-day-input').val() !== '') {
+        let date = $('.room-service-any-day-input').val()
+        orders.getRoomServiceOrdersAnyDay(date);
+        domUpdates.displayRoomServiceOrdersAnyDay(orders.roomServiceOrdersAnyDay);
+      }
+    });
+  });
+}
 
