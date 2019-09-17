@@ -6,6 +6,7 @@ class Rooms {
     this.bookingsToday = [];
     this.todaysTotalRevenue = 0;
     this.customerID = null;
+    this.dateWithMostRoomsAvail;
   }
 
   getTotalBookingsToday(date) {
@@ -45,16 +46,29 @@ class Rooms {
   
   getMostPopularBookingDate() {
     let numBookingsForDate = this.totalBookings.reduce((acc, book) => {
-      // console.log(this.totalBookings);
       if (!acc[book.date]) {
         acc[book.date] = 0;
       }
       acc[book.date]++
       return acc;
     }, {});
-    console.log(numBookingsForDate)
+    
     this.mostPopularBookingDate = Object.keys(numBookingsForDate).sort((a, b) => {
       return numBookingsForDate[b] - numBookingsForDate[a];
+    })[0];
+  }
+
+  getDateWithMostRoomsAvail() {
+    let numBookingsForDate = this.totalBookings.reduce((acc, book) => {
+      if (!acc[book.date]) {
+        acc[book.date] = 0;
+      }
+      acc[book.date]++
+      return acc;
+    }, {});
+
+    this.dateWithMostRoomsAvail = Object.keys(numBookingsForDate).sort((a, b) => {
+      return numBookingsForDate[a] - numBookingsForDate[b];
     })[0];
   }
 
