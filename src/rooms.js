@@ -43,6 +43,20 @@ class Rooms {
     this.customerID = customerID
   }
   
+  getMostPopularBookingDate() {
+    let numBookingsForDate = this.totalBookings.reduce((acc, book) => {
+      // console.log(this.totalBookings);
+      if (!acc[book.date]) {
+        acc[book.date] = 0;
+      }
+      acc[book.date]++
+      return acc;
+    }, {});
+    console.log(numBookingsForDate)
+    this.mostPopularBookingDate = Object.keys(numBookingsForDate).sort((a, b) => {
+      return numBookingsForDate[b] - numBookingsForDate[a];
+    })[0];
+  }
 
 }
 
