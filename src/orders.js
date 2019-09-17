@@ -6,6 +6,7 @@ class Orders {
     this.roomServiceOrdersAnyDay = [];
     this.customerID = null;
     this.datesAndDollarAmountsForRoomService = {}
+    this.totalAmountForRoomServiceToday = 0;
   }
 
   calculateTodaysTotalRevenue(date) {
@@ -41,7 +42,14 @@ class Orders {
       acc[order.date] = totalRoomService;
       return acc;
     }, {});
-    console.log(this.datesAndDollarAmountsForRoomService)
+  }
+
+  getDollarAmountForRoomServiceToday() {
+    let total = 0
+    this.allOrdersForRoomServiceToday.forEach(order => {
+      total += order.totalCost;
+    })
+    this.totalAmountForRoomServiceToday = total;
   }
 
 
