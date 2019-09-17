@@ -139,6 +139,7 @@ function handleOrders(orders) {
   displayRoomServiceOrdersAnyDay(orders);
   datesAndDollarAmountsForRoomService(orders);
   dollarAmountForRoomServiceToday(orders);
+  displayTotalRoomServiceAmountEver(orders);
 }
 
 function displayAllordersForRoomService(orders) {
@@ -167,4 +168,11 @@ function dollarAmountForRoomServiceToday(orders) {
   orders.getDollarAmountForRoomServiceToday();
   domUpdates.displayDollarAmountForRoomServiceToday(orders.totalAmountForRoomServiceToday);
 }
+
+function displayTotalRoomServiceAmountEver(orders) {
+  orders.getTotalRoomServiceAmountEver();
+  domUpdates.displayTotalRoomServiceAmountEver(orders.totalAmountForRoomServiceEver);
+  
+}
+
 
