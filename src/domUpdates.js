@@ -62,7 +62,11 @@ export default {
   },
 
   displayDollarAmountForRoomServiceToday(totalAmountForRoomServiceToday) {
-    $('.display-amount-room-service-today').text(totalAmountForRoomServiceToday);
+    $('.display-amount-room-service-today').text(`$${totalAmountForRoomServiceToday}`);
+  },
+
+  displayTotalRoomServiceAmountEver(totalAmountForRoomServiceEver) {
+    $('.display-amount-room-service-ever').text(`$${totalAmountForRoomServiceEver}`);
   }
 
 }
