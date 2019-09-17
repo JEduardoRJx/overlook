@@ -76,6 +76,10 @@ export default {
     } else {
       $('.display-amount-room-service-ever').text(`$${totalAmountForRoomServiceEver}`);
     }
+  },
+
+  displayMostPopularBookingDate(mostPopularBookingDate) {
+    $('.most-popular-booking-date').text(mostPopularBookingDate)
   }
 
 }
