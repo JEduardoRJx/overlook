@@ -102,17 +102,13 @@ function searchCustomer() {
 }
 
 function selectingACustomer(customers) {
-  console.log('here', customers)
   if (Object.keys(customers.customer).length === 0) {
     domUpdates.displayNoCustomer();
   }
-
   $('.individual-customer').on('click', (event) => {
-    console.log(parseInt(event.currentTarget.id))
     let customerID = parseInt(event.currentTarget.id);
     customers.selectCustomer(customerID);
-    console.log(customers.customer.name)
-    domUpdates.displayCustomerName(customers.customer.name);
+    domUpdates.displayCustomerInformation(customers);
   });
   // selectingACustomer(customers);
 }

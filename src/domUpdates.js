@@ -31,16 +31,12 @@ export default {
 
   displayNoCustomer() {
     $('.no-customer').show();
-    $('."display-customer-tab"').hide()
+    $('.display-customer-tab').hide()
   },
 
-  displayCustomerName(customerName) {
-    console.log(customerName)
+  displayCustomerInformation(customers) {
     $('.no-customer').hide ();
     $('.display-name-background').show()
-    
-    //AM HERE 9/15/2019
-    // $('.display-name').text(customerName);
   }
 
 }
