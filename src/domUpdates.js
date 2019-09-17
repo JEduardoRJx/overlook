@@ -62,8 +62,12 @@ export default {
     })
   },
 
-  displayDollarAmountForRoomServiceToday(totalAmountForRoomServiceToday) {
-    $('.display-amount-room-service-today').text(`$${totalAmountForRoomServiceToday}`);
+  displayAmountRoomServiceForCustomerToday(totalAmountForRoomServiceToday) {
+    if (totalAmountForRoomServiceToday === 0){
+      $('.display-amount-room-service-today').text(`No Valid Data Exists`);
+    } else {
+      $('.display-amount-room-service-today').text(`$${totalAmountForRoomServiceToday}`);
+    }
   },
 
   displayTotalRoomServiceAmountEver(totalAmountForRoomServiceEver) {
