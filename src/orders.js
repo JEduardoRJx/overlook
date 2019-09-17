@@ -17,9 +17,7 @@ class Orders {
   }
 
   getAllOrdersForRoomServiceToday(date) {
-    console.log("hey2", date)
     this.allOrdersForRoomServiceToday = this.orders.filter(order => order.date === date);
-    console.log("hey3", this.allOrdersForRoomServiceToday)
   }
 
 }
