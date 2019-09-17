@@ -116,9 +116,9 @@ function selectingACustomer(orders, rooms, customers) {
     customers.selectCustomer(customerID);
     orders.setCustomerID(customerID);
     rooms.setCustomerID(customerID);
-    datesAndDollarAmountsForRoomService(orders, customerID);
-    // dollarAmountForRoomServiceToday(orders);
-    // displayTotalRoomServiceAmountEver(orders);
+    allDatesAndDollarAmountsRoomServiceForCustomer(orders, customerID);
+    displayTotalAmountRoomServiceForCustomerToday(orders, customerID);
+    displayTotalAmountRoomServiceForCustomerEver(orders, customerID);
     domUpdates.displayCustomerInformationCustomerTab(customers.customer.name);
   }); 
 }
@@ -159,19 +159,19 @@ function displayRoomServiceOrdersAnyDay(orders) {
   });
 }
 
-function datesAndDollarAmountsForRoomService(orders, customerID) {
-  orders.setDatesAndDollarAmountsForRoomService(customerID);
-  domUpdates.displayDatesAndDollarAmountsForRoomService(orders.datesAndDollarAmountsForRoomService);
+function allDatesAndDollarAmountsRoomServiceForCustomer(orders, customerID) {
+  orders.setAllDatesAndDollarAmountsRoomServiceForCustomer(customerID);
+  domUpdates.displayAllDatesAndDollarAmountsRoomServiceForCustomer(orders.allDatesAndDollarAmountsRoomServiceForCustomer);
 }
 
-function dollarAmountForRoomServiceToday(orders) {
-  orders.getDollarAmountForRoomServiceToday();
-  domUpdates.displayDollarAmountForRoomServiceToday(orders.totalAmountForRoomServiceToday);
+function displayTotalAmountRoomServiceForCustomerToday(orders, customerID) {
+  orders.getAmountRoomServiceForCustomerToday(customerID);
+  domUpdates.displayAmountRoomServiceForCustomerToday(orders.totalAmountRoomServiceForCustomerToday);
 }
 
-function displayTotalRoomServiceAmountEver(orders) {
-  orders.getTotalRoomServiceAmountEver();
-  domUpdates.displayTotalRoomServiceAmountEver(orders.totalAmountForRoomServiceEver);
+function displayTotalAmountRoomServiceForCustomerEver(orders, customerID) {
+  orders.getTotalAmountRoomServiceForCustomerEver(customerID);
+  domUpdates.displayTotalRoomServiceAmountEver(orders.totalAmountRoomServiceForCustomerEver);
   
 }
 
