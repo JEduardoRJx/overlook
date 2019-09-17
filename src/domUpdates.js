@@ -54,7 +54,7 @@ export default {
     });
   },
 
-  displayDatesAndDollarAmountsForRoomService(datesAndDollarAmounts) {
+  displayAllDatesAndDollarAmountsRoomServiceForCustomer(datesAndDollarAmounts) {
     $('.display-dates-and-dollar-amounts').children().remove();
 
     datesAndDollarAmounts.forEach(day => {
