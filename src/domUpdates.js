@@ -79,7 +79,11 @@ export default {
   },
 
   displayMostPopularBookingDate(mostPopularBookingDate) {
-    $('.most-popular-booking-date').text(mostPopularBookingDate)
+    $('.most-popular-booking-date').text(mostPopularBookingDate);
+  },
+
+  displayDateWithMostRoomsAvail(dateWithMostRoomsAvail) {
+    $('.date-with-most-rooms-avail').text(dateWithMostRoomsAvail);
   }
 
 }
