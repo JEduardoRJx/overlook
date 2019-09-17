@@ -38,6 +38,13 @@ export default {
     $('.no-customer').hide();
     $('.display-customer-tab').show();
     $('.display-name-customer-tab').text(customerName);
+  },
+
+  displayAllOrdersForRoomServiceToday(allOrders) {
+    console.log(allOrders)
+    // allOrders.forEach(order => {
+    //   $().append(order.food)
+    // })
   }
 
 }
