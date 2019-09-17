@@ -43,14 +43,14 @@ export default {
   displayAllOrdersForRoomServiceToday(allOrders) {
     
     allOrders.forEach(order => {
-      $('.room-service-today-background').append(`<div class="individual-order">${order.food}</div>`)
+      $('.order-service-today-background').append(`<div class="individual-order">${order.food}</div>`)
     })
   },
 
   displayRoomServiceOrdersAnyDay(ordersAnyDay) {
-    $('.display-room-service-any-day').children().remove();
+    $('.display-order-service-any-day').children().remove();
     ordersAnyDay.forEach(order => {
-      $('.display-room-service-any-day').append(`<div class="individual-order">${order.food}</div>`)
+      $('.display-order-service-any-day').append(`<div class="individual-order">${order.food}</div>`)
     });
   },
 

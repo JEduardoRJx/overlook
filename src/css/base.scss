@@ -211,7 +211,8 @@ section {
 }
 
 .individual-customer,
-.individual-order {
+.individual-order,
+ {
   font-size: 1.25em;
   text-align: center;
   // background-color: blue;
@@ -253,15 +254,15 @@ section {
   display: flex;
 }
 
-.room-service-today-background,
-.dates-and-dollar-amounts-background {
-  height: 100%;
-  width: 300px;
-  background-color: rgba(83, 64, 95, 0.5);
-  border-radius: 5px;
-  overflow: scroll;
-  padding: 5px;
-}
+// .room-service-today-background,
+// .dates-and-dollar-amounts-background {
+//   height: 100%;
+//   width: 300px;
+//   background-color: rgba(83, 64, 95, 0.5);
+//   border-radius: 5px;
+//   overflow: scroll;
+//   padding: 5px;
+// }
 
 .room-service-any-day-wrapper {
   display: flex;
@@ -284,4 +285,25 @@ section {
 .total-amount-room-service-today {
   width: 300px;
   height: 100px;
+}
+
+#rooms {
+  display: flex;
+}
+
+.room-default-info-background,
+.room-search-rooms-background,
+.room-customer-info-background,
+.room-create-booking-info-background,
+.order-service-today-background,
+.order-service-any-day-background,
+.dates-and-dollar-amounts-background,
+.total-amount-order-service-today,
+.total-amount-order-service-ever-background {
+  height: 100%;
+  width: 25%;
+  background-color: rgba(83, 64, 95, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
 }

@@ -71,6 +71,7 @@ function loadTabs(hotelData) {
   selectingACustomer(orders, rooms, customers);
   addCustomer(customers);
   handleOrders(orders);
+  handleRooms(rooms);
 }
 
 function displayRoomInfo(rooms) {
@@ -139,7 +140,6 @@ function addCustomer(customers) {
 function handleOrders(orders) {
   displayAllordersForRoomService(orders, getDate());
   displayRoomServiceOrdersAnyDay(orders);
-  
 }
 
 function displayAllordersForRoomService(orders) {
@@ -172,7 +172,10 @@ function displayTotalAmountRoomServiceForCustomerToday(orders, customerID) {
 function displayTotalAmountRoomServiceForCustomerEver(orders, customerID) {
   orders.getTotalAmountRoomServiceForCustomerEver(customerID);
   domUpdates.displayTotalRoomServiceAmountEver(orders.totalAmountRoomServiceForCustomerEver);
-  
+}
+
+function handleRooms(rooms); {
+
 }
 
 
