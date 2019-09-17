@@ -57,9 +57,9 @@ let getDate = () => {
   date = date.split('/').map(num => (num < 10) ? '0' + num : num).join('/');
   return date;
 }
-loadTabs()
+// loadTabs()
 
-function loadTabs() {
+function loadTabs(hotelData) {
   main = new Main(hotelData);
   orders = new Orders(hotelData);
   rooms = new Rooms(hotelData);
@@ -68,6 +68,7 @@ function loadTabs() {
   getTodaysTotalRevenue(rooms, orders);
   displayCustomersAside(customers);
   selectingACustomer(customers);
+  addCustomer(customers);
 }
 
 function displayRoomInfo(rooms) {
@@ -109,6 +110,19 @@ function selectingACustomer(customers) {
     let customerID = parseInt(event.currentTarget.id);
     customers.selectCustomer(customerID);
     domUpdates.displayCustomerInformation(customers);
-  });
-  // selectingACustomer(customers);
+  });  
 }
+
+function addCustomer(customers) {
+  $(document).ready(function() {
+    $('.add-customer-btn').on('click', () => {
+      if($('.add-customer-input').val() !== '') {
+        customers.addCustomer($('.add-customer-input').val())
+        $('.add-customer-input').val('');
+      }
+    });
+  });
+}
+
+
+
