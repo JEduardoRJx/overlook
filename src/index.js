@@ -116,8 +116,7 @@ function selectingACustomer(orders, rooms, customers) {
     customers.selectCustomer(customerID);
     orders.setCustomerID(customerID);
     rooms.setCustomerID(customerID);
-    datesAndDollarAmountsForRoomService(orders);
-    dollarAmountForRoomServiceToday(orders)
+    
     domUpdates.displayCustomerInformationCustomerTab(customers.customer.name);
   }); 
 }
@@ -138,6 +137,8 @@ function addCustomer(customers) {
 function handleOrders(orders) {
   displayAllordersForRoomService(orders, getDate());
   displayRoomServiceOrdersAnyDay(orders);
+  datesAndDollarAmountsForRoomService(orders);
+  dollarAmountForRoomServiceToday(orders);
 }
 
 function displayAllordersForRoomService(orders) {
