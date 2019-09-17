@@ -55,9 +55,10 @@ export default {
   },
 
   displayDatesAndDollarAmountsForRoomService(datesAndDollarAmounts) {
-    let keys = Object.keys(datesAndDollarAmounts);
-    keys.forEach(day => {
-      $('.display-dates-and-dollar-amounts').append(`<div class='individual-day-dollar-amount'>${day} = ${datesAndDollarAmounts[day]}</div>`);
+    $('.display-dates-and-dollar-amounts').children().remove();
+
+    datesAndDollarAmounts.forEach(day => {
+      $('.display-dates-and-dollar-amounts').append(`<div class='individual-day-dollar-amount'>${day.date} = $${day.totalCost}</div>`);
     })
   },
 

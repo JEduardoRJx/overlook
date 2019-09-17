@@ -5,7 +5,7 @@ class Orders {
     this.allOrdersForRoomServiceToday = [];
     this.roomServiceOrdersAnyDay = [];
     this.customerID = null;
-    this.datesAndDollarAmountsForRoomService = {}
+    this.datesAndDollarAmountsForRoomService = []
     this.totalAmountForRoomServiceToday = 0;
     this.totalAmountForRoomServiceEver = 0;
   }
@@ -33,16 +33,14 @@ class Orders {
     this.customerID = customerID
   }
 
-  setDatesAndDollarAmountsForRoomService() {
-    this.datesAndDollarAmountsForRoomService = this.orders.reduce((acc, order) => {
-      let totalRoomService = 0;
-      if (!acc[order.date]) {
-        acc[order.date] = 0;
-      }
-      totalRoomService += order.totalCost;
-      acc[order.date] = totalRoomService;
-      return acc;
-    }, {});
+  setDatesAndDollarAmountsForRoomService(customerID) {
+    this.datesAndDollarAmountsForRoomService = this.orders.filter(order => {
+      return order.userID === customerID;
+    });
+    
+
+
+    console.log(this.datesAndDollarAmountsForRoomService)
   }
 
   getDollarAmountForRoomServiceToday() {

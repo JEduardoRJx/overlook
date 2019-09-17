@@ -116,7 +116,9 @@ function selectingACustomer(orders, rooms, customers) {
     customers.selectCustomer(customerID);
     orders.setCustomerID(customerID);
     rooms.setCustomerID(customerID);
-    
+    datesAndDollarAmountsForRoomService(orders, customerID);
+    // dollarAmountForRoomServiceToday(orders);
+    // displayTotalRoomServiceAmountEver(orders);
     domUpdates.displayCustomerInformationCustomerTab(customers.customer.name);
   }); 
 }
@@ -137,9 +139,7 @@ function addCustomer(customers) {
 function handleOrders(orders) {
   displayAllordersForRoomService(orders, getDate());
   displayRoomServiceOrdersAnyDay(orders);
-  datesAndDollarAmountsForRoomService(orders);
-  dollarAmountForRoomServiceToday(orders);
-  displayTotalRoomServiceAmountEver(orders);
+  
 }
 
 function displayAllordersForRoomService(orders) {
@@ -159,8 +159,8 @@ function displayRoomServiceOrdersAnyDay(orders) {
   });
 }
 
-function datesAndDollarAmountsForRoomService(orders) {
-  orders.setDatesAndDollarAmountsForRoomService();
+function datesAndDollarAmountsForRoomService(orders, customerID) {
+  orders.setDatesAndDollarAmountsForRoomService(customerID);
   domUpdates.displayDatesAndDollarAmountsForRoomService(orders.datesAndDollarAmountsForRoomService);
 }
 
