@@ -51,7 +51,7 @@ export default {
     $('.display-room-service-any-day').children().remove();
     ordersAnyDay.forEach(order => {
       $('.display-room-service-any-day').append(`<div class="individual-order">${order.food}</div>`)
-    })
+    });
   }
 
 }
