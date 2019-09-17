@@ -176,7 +176,9 @@ function displayTotalAmountRoomServiceForCustomerEver(orders, customerID) {
 
 function handleRooms(rooms) {
   rooms.getMostPopularBookingDate();
-  domUpdates.displayMostPopularBookingDate(rooms.mostPopularBookingDate)
+  domUpdates.displayMostPopularBookingDate(rooms.mostPopularBookingDate);
+  rooms.getDateWithMostRoomsAvail();
+  domUpdates.displayDateWithMostRoomsAvail(rooms.dateWithMostRoomsAvail);
 }
 
 
