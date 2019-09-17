@@ -42,9 +42,10 @@ export default {
 
   displayAllOrdersForRoomServiceToday(allOrders) {
     console.log(allOrders)
-    // allOrders.forEach(order => {
-    //   $().append(order.food)
-    // })
+    
+    allOrders.forEach(order => {
+      $('.room-service-today-background').append(`<div class="individual-order">${order.food}</div>`)
+    })
   }
 
 }
