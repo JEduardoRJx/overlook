@@ -134,7 +134,8 @@ function handleOrders(orders) {
 
 function displayAllordersForRoomService(orders, date) {
   console.log("hey", orders)
-  orders.getAllOrdersForRoomServiceToday(date)
+  orders.getAllOrdersForRoomServiceToday(date);
+  domUpdates.displayAllOrdersForRoomServiceToday(orders.allOrdersForRoomServiceToday);
 }
 
 
