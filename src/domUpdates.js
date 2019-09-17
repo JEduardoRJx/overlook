@@ -34,9 +34,10 @@ export default {
     $('.display-customer-tab').hide()
   },
 
-  displayCustomerInformation(customers) {
-    $('.no-customer').hide ();
-    $('.display-name-background').show()
+  displayCustomerInformation(customerName) {
+    $('.no-customer').hide();
+    $('.display-customer-tab').show();
+    $('.display-name-customer-tab').text(customerName);
   }
 
 }

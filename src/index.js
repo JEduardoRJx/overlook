@@ -69,6 +69,7 @@ function loadTabs(hotelData) {
   displayCustomersAside(customers);
   selectingACustomer(customers);
   addCustomer(customers);
+  handleOrders(orders);
 }
 
 function displayRoomInfo(rooms) {
@@ -109,7 +110,8 @@ function selectingACustomer(customers) {
   $('.individual-customer').on('click', (event) => {
     let customerID = parseInt(event.currentTarget.id);
     customers.selectCustomer(customerID);
-    domUpdates.displayCustomerInformation(customers);
+    domUpdates.displayCustomerInformation(customers.customer.name);
+    
   });  
 }
 
@@ -119,9 +121,20 @@ function addCustomer(customers) {
       if($('.add-customer-input').val() !== '') {
         customers.addCustomer($('.add-customer-input').val())
         $('.add-customer-input').val('');
+        domUpdates.displayCustomerInformation(customers.customer.name)
       }
     });
   });
+}
+
+//ORDERS
+function handleOrders(orders) {
+  displayAllordersForRoomService(orders, getDate())
+}
+
+function displayAllordersForRoomService(orders, date) {
+  console.log("hey", orders)
+  orders.getAllOrdersForRoomServiceToday(date)
 }
 
 

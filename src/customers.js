@@ -2,6 +2,7 @@ class Customers {
   constructor(data) {
     this.allCustomers = data.users;
     this.customer = {};
+    
   }
 
   selectCustomer(customerID) {
