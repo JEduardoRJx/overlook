@@ -86,7 +86,7 @@ function getTodaysTotalRevenue(rooms, orders) {
   rooms.getRoomsBookedToday();
   rooms.calculateTodaysTotalRevenue();
   orders.calculateTodaysTotalRevenue(getDate());
-  let totalRev = rooms.todaysTotalRevenue + orders.todaysTotalRevenue;
+  let totalRev = parseFloat((rooms.todaysTotalRevenue + orders.todaysTotalRevenue).toFixed(2));
   domUpdates.displayTotalRevenue(totalRev);
 }
 
