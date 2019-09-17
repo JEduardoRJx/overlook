@@ -2,7 +2,8 @@ class Orders {
   constructor(data) {
     this.orders = data.roomServices;
     this.todaysTotalRevenue  = 0;
-    this.allOrdersForRoomServiceToday = []
+    this.allOrdersForRoomServiceToday = [];
+    this.roomServiceOrdersAnyDay = [];
   }
 
   calculateTodaysTotalRevenue(date) {
@@ -19,6 +20,12 @@ class Orders {
   getAllOrdersForRoomServiceToday(date) {
     this.allOrdersForRoomServiceToday = this.orders.filter(order => order.date === date);
   }
+
+  getRoomServiceOrdersAnyDay(date) {
+    this.roomServiceOrdersAnyDay = this.orders.filter(order => order.date === date);
+  }
+
+
 
 }
 
