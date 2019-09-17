@@ -37,6 +37,9 @@ class Rooms {
     this.todaysTotalRevenue = parseFloat(this.todaysTotalRevenue.toFixed(2));
     return this.todaysTotalRevenue;
   }
+
+  
+
 }
 
 export default Rooms

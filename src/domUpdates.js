@@ -34,9 +34,18 @@ export default {
     $('.display-customer-tab').hide()
   },
 
-  displayCustomerInformation(customers) {
-    $('.no-customer').hide ();
-    $('.display-name-background').show()
+  displayCustomerInformation(customerName) {
+    $('.no-customer').hide();
+    $('.display-customer-tab').show();
+    $('.display-name-customer-tab').text(customerName);
+  },
+
+  displayAllOrdersForRoomServiceToday(allOrders) {
+    console.log(allOrders)
+    
+    allOrders.forEach(order => {
+      $('.room-service-today-background').append(`<div class="individual-order">${order.food}</div>`)
+    })
   }
 
 }
