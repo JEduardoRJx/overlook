@@ -174,8 +174,8 @@ function displayTotalAmountRoomServiceForCustomerEver(orders, customerID) {
   domUpdates.displayTotalRoomServiceAmountEver(orders.totalAmountRoomServiceForCustomerEver);
 }
 
-function handleRooms(rooms); {
-
+function handleRooms(rooms) {
+  console.log("hey")
 }
 
 
