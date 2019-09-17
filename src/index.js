@@ -67,7 +67,8 @@ function loadTabs(hotelData) {
   displayRoomInfo(rooms);
   getTodaysTotalRevenue(rooms, orders);
   displayCustomersAside(customers);
-  selectingACustomer(customers);
+  handleDisplayNoCustomer();
+  selectingACustomer(orders, rooms, customers);
   addCustomer(customers);
   handleOrders(orders);
 }
@@ -103,16 +104,21 @@ function searchCustomer() {
   });
 }
 
-function selectingACustomer(customers) {
+function handleDisplayNoCustomer() {
   if (Object.keys(customers.customer).length === 0) {
     domUpdates.displayNoCustomer();
   }
+}
+
+function selectingACustomer(orders, rooms, customers) {
   $('.individual-customer').on('click', (event) => {
     let customerID = parseInt(event.currentTarget.id);
     customers.selectCustomer(customerID);
-    domUpdates.displayCustomerInformation(customers.customer.name);
-    
-  });  
+    orders.setCustomerID(customerID);
+    rooms.setCustomerID(customerID);
+    datesAndDollarAmountsForRoomService(orders)
+    domUpdates.displayCustomerInformationCustomerTab(customers.customer.name);
+  }); 
 }
 
 function addCustomer(customers) {
@@ -133,8 +139,8 @@ function handleOrders(orders) {
   displayRoomServiceOrdersAnyDay(orders);
 }
 
-function displayAllordersForRoomService(orders, date) {
-  orders.getAllOrdersForRoomServiceToday(date);
+function displayAllordersForRoomService(orders) {
+  orders.getAllOrdersForRoomServiceToday(getDate());
   domUpdates.displayAllOrdersForRoomServiceToday(orders.allOrdersForRoomServiceToday);
 }
 
@@ -142,11 +148,16 @@ function displayRoomServiceOrdersAnyDay(orders) {
   $(document).ready(function() {
     $('.room-service-any-day-btn').on('click', () => {
       if($('.room-service-any-day-input').val() !== '') {
-        let date = $('.room-service-any-day-input').val()
+        let date = $('.room-service-any-day-input').val();
         orders.getRoomServiceOrdersAnyDay(date);
         domUpdates.displayRoomServiceOrdersAnyDay(orders.roomServiceOrdersAnyDay);
       }
     });
   });
+}
+
+function datesAndDollarAmountsForRoomService(orders) {
+  orders.setDatesAndDollarAmountsForRoomService();
+  domUpdates.displayDatesAndDollarAmountsForRoomService(orders.datesAndDollarAmountsForRoomService)
 }
 

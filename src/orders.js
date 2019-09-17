@@ -4,6 +4,8 @@ class Orders {
     this.todaysTotalRevenue  = 0;
     this.allOrdersForRoomServiceToday = [];
     this.roomServiceOrdersAnyDay = [];
+    this.customerID = null;
+    this.datesAndDollarAmountsForRoomService = {}
   }
 
   calculateTodaysTotalRevenue(date) {
@@ -25,6 +27,22 @@ class Orders {
     this.roomServiceOrdersAnyDay = this.orders.filter(order => order.date === date);
   }
 
+  setCustomerID(customerID) {
+    this.customerID = customerID
+  }
+
+  setDatesAndDollarAmountsForRoomService() {
+    this.datesAndDollarAmountsForRoomService = this.orders.reduce((acc, order) => {
+      let totalRoomService = 0;
+      if (!acc[order.date]) {
+        acc[order.date] = 0;
+      }
+      totalRoomService += order.totalCost;
+      acc[order.date] = totalRoomService;
+      return acc;
+    }, {});
+    console.log(this.datesAndDollarAmountsForRoomService)
+  }
 
 
 }

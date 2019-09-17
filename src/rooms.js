@@ -5,6 +5,7 @@ class Rooms {
     this.roomsBookedToday = [];
     this.bookingsToday = [];
     this.todaysTotalRevenue = 0;
+    this.customerID = null;
   }
 
   getTotalBookingsToday(date) {
@@ -38,6 +39,9 @@ class Rooms {
     return this.todaysTotalRevenue;
   }
 
+  setCustomerID(customerID) {
+    this.customerID = customerID
+  }
   
 
 }

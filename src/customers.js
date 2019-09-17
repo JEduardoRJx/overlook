@@ -7,6 +7,7 @@ class Customers {
 
   selectCustomer(customerID) {
     this.customer = this.allCustomers.find(customer => customer.id === customerID);
+    return this.customer
   }
 
   addCustomer(customerName) {

@@ -34,7 +34,7 @@ export default {
     $('.display-customer-tab').hide()
   },
 
-  displayCustomerInformation(customerName) {
+  displayCustomerInformationCustomerTab(customerName) {
     $('.no-customer').hide();
     $('.display-customer-tab').show();
     $('.display-name-customer-tab').text(customerName);
@@ -52,6 +52,13 @@ export default {
     ordersAnyDay.forEach(order => {
       $('.display-room-service-any-day').append(`<div class="individual-order">${order.food}</div>`)
     });
-  }
+  },
+
+  displayDatesAndDollarAmountsForRoomService(datesAndDollarAmounts) {
+    let keys = Object.keys(datesAndDollarAmounts);
+    keys.forEach(day => {
+      $('.display-dates-and-dollar-amounts').append(`<div class='individual-day-dollar-amount'>${day} = ${datesAndDollarAmounts[day]}</div>`)
+    })
+  },
 
 }
