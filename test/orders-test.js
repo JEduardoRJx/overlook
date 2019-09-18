@@ -31,11 +31,11 @@ describe('Orders', () => {
   });
 
   it('customerID should start as null', () => {
-    expect(Orders).to.equal(null);
+    expect(orders.customerID).to.equal(null);
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('all dates and dollar amouns for room service for a customer should be an array', () => {
+    expect(orders.allDatesAndDollarAmountsRoomServiceForCustomer).to.be.a('array');
   });
 
   it.skip('should be a function', () => {
