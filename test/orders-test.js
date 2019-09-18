@@ -42,8 +42,8 @@ describe('Orders', () => {
     expect(orders.totalAmountRoomServiceForCustomerToday).to.equal(0);
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('total amount of room service for a customer ever should start as 0', () => {
+    expect(orders.totalAmountRoomServiceForCustomerEver).to.equal(0);
   });
 
   it.skip('should be a function', () => {
