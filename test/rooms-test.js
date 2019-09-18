@@ -88,4 +88,9 @@ describe('Rooms', () => {
     expect(rooms.mostPopularBookingDate).to.equal('2019/09/01');
   });
 
+  it('should get date with most rooms available', () => {
+    rooms.getDateWithMostRoomsAvail();
+    expect(rooms.dateWithMostRoomsAvail).to.equal('2019/10/19');
+  });
+
 });
