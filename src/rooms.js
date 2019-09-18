@@ -87,8 +87,7 @@ class Rooms {
   };
 
   selectRoom(roomID) {
-    this.room = this.totalRooms.find(room => room.id === roomID);
-    console.log(this.room);
+    this.room = this.totalRooms.find(room => room.number === roomID);
   }
 }
 
