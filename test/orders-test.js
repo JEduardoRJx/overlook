@@ -38,8 +38,8 @@ describe('Orders', () => {
     expect(orders.allDatesAndDollarAmountsRoomServiceForCustomer).to.be.a('array');
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('total amount of room service for a customer today should start as 0', () => {
+    expect(orders.totalAmountRoomServiceForCustomerToday).to.equal(0);
   });
 
   it.skip('should be a function', () => {
