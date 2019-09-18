@@ -83,4 +83,9 @@ describe('Rooms', () => {
     expect(rooms.customerID).to.equal(100);
   });
 
+  it('should get most popular booking date', () => {
+    rooms.getMostPopularBookingDate();
+    expect(rooms.mostPopularBookingDate).to.equal('2019/09/01');
+  });
+
 });
