@@ -5,56 +5,53 @@ $White: #EAE7EB;
 $lightPurpleBackground: rgba(83, 64, 95, 0.5);
 
 * {
-  font-family: 'Comfortaa', cursive;
   box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
   margin: 0px;
   transition: ease all .3s;
 }
 
 .img {
-  background: url('https://images2.alphacoders.com/760/760735.jpg') no-repeat;
-  background-size: cover;
   background-position: top;
+  background-size: cover;
+  background: url('https://images2.alphacoders.com/760/760735.jpg') no-repeat;
   filter: blur(3px);
-  width: 100%;
   height: 100%;
   position: fixed;
+  width: 100%;
   z-index: -5;
 }
 
 nav {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  // background-color: #53405F;
-  height: 75px;
   color: $White;
+  display: flex;
+  height: 75px;
+  justify-content: space-between;
 }
 
 h1 {
-  font-size: 3em;
-  // padding-left: 15px;
-  width: 100%;
-  height: 100%;
-  display: flex;
   align-items: center;
   background-color: $darkPurple;
+  display: flex;
+  font-size: 3em;
+  height: 100%;
+  width: 100%;
 }
 
 .nav-wrapper {
   display: flex;
   height: 100%;
-  // background-color:blue;
 };
 
 .nav-icons {
-  padding: 0px 15px;
-  font-size: 2em;
-  height: 100%;
+  align-items: center;
   background-color: $darkPurple;
   color: $White;
-  align-items: center;
   display: flex;
+  font-size: 2em;
+  height: 100%;
+  padding: 0px 15px;
   text-decoration:none;
 }
 
@@ -65,33 +62,31 @@ h1 {
 }
 
 main {
-  height: 90vh;
   display:flex;
-  // background-color: blue;
-  // opacity: 0.2;
+  height: 90vh;
 }
 
 aside {
-  width: 350px;
   height: 100%;
   margin: 20px 10px 20px 20px;
+  width: 350px;
 }
 
 .aside-background {
-  width: 100%;
-  height: 100%;
   background-color: $lightPurpleBackground;
   border-radius: 5px;
   color: $White;
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 10px;
+  width: 100%;
 }
 
 h2 {
+  color: $White;
   font-size: 2em;
   text-align: center;
-  color: $White;
 }
 
 h3 {
@@ -104,11 +99,10 @@ h3 {
 }
 
 input {
-  width: 100%;
   border: none;
-  height: 40px;
   font-size: 1.25em;
-  // padding: 0 5px;
+  height: 40px;
+  width: 100%;
 }
 
 form {
@@ -126,9 +120,9 @@ form {
 .add-customer-input,
 .room-service-any-day-input,
 .booking-service-any-day-input {
+  border-radius: 5px 0 0 5px;
   font-size: 1.25em;
   text-align: center;
-  border-radius: 5px 0 0 5px;
 }
 
 .search-customer-input {
@@ -152,16 +146,15 @@ form {
 }
 
 .add-customer-btn {
-  height: 100%;
-  // padding: 0px
-  width: 20%;
-  font-size: 2.5em;
-  outline: none;
   -webkit-appearance: none;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  color: $White;
   background-color: $lightPurpleBackground;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  color: $White;
+  font-size: 2.5em;
+  height: 100%;
+  outline: none;
+  width: 20%;
 }
 
 section {
@@ -174,101 +167,93 @@ section {
   flex-direction: column;
   height: 100%;
   margin: 20px 20px 20px 10px;
-
 }
 
 .display-customer-name-wrapper {
-  width: 80%;
-  height: 10%;
-  margin-bottom: 10px;
+  align-items: center;
   background-color: $lightPurpleBackground;
+  border-radius: 5px;
   color: $White;
   display: flex;
+  height: 10%;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 10px;
   margin: auto;
-  border-radius: 5px;
+  width: 80%;
 }
 
 .main-room-wrapper {
   display: flex;
-  width: 100%;
   height: 50%;
-  
+  width: 100%;
 }
 
 .total-rooms-available-background {
-  width: 100%;
-  height: 100%;
   background-color: $lightPurpleBackground;
   border-radius: 5px;
-  // padding: 10px;
   color: $White;
-  margin: 10px 10px 10px 0px;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: center;
+  margin: 10px 10px 10px 0px;
+  text-align: center;
+  width: 100%;
 }
 .total-rooms-available,
 .percent-rooms-occupied,
 .total-revenue, .display-amount-room-service-today,
 .display-amount-room-service-ever {
   font-size: 3.5em;
-  // margin-bottom: 10px
 }
 
 .percent-rooms-background {
-  width: 100%;
-  height: 100%;
   background-color: $lightPurpleBackground;
   border-radius: 5px;
-  // padding: 10px;
   color: $White;
-  margin: 10px 0px 10px 10px;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: center;
-  
+  margin: 10px 0px 10px 10px;
+  text-align: center;
+  width: 100%;
 }
 
 .total-revenue-background {
-  width: 100%;
-  height: 50%;
   background-color: $lightPurpleBackground;
   border-radius: 5px;
-  // padding: 10px;
   color: $White;
-  margin: 30px 0px 0px 0px;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  height: 50%;
   justify-content: center;
+  margin: 30px 0px 0px 0px;
+  text-align: center;
+  width: 100%;
 }
 
 .all-customers {
-  height: 100%;
-  width: 100%;
-  border: 2px $White solid;
   border-radius: 5px;
+  border: 2px $White solid;
+  height: 100%;
   overflow: scroll;
+  width: 100%;
 }
 
 .individual-customer,
 .individual-order,
 .individual-day-dollar-amount {
-  font-size: 1.5em;
-  text-align: center;
-  // background-color: blue;
-  height: 75px;
-  display: flex;
   align-items: center;
-  border-top: 1px $White solid;
   border-bottom: 1px $White solid;
-  justify-content: center;
-  text-decoration: none;
+  border-top: 1px $White solid;
   color: $White;
+  display: flex;
+  font-size: 1.5em;
+  height: 75px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
 }
 
 .individual-room {
@@ -286,16 +271,15 @@ section {
 
 .no-customer,
 .display-customer-tab {
-  color: $White;
-  font-size: 2em;
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: $lightPurpleBackground;
   border-radius: 5px;
-  // padding: 10px;
-  width: 100%;
+  color: $White;
+  display: flex;
+  font-size: 2em;
   height: 33%;
+  justify-content: center;
+  width: 100%;
 }
 
 //*****ORDERS
@@ -320,21 +304,20 @@ section {
 
 .room-service-any-day-btn,
 .booking-service-any-day-btn {
-  height: 100%;
-  // padding: 0;
-  width: 20%;
-  font-size: 2.5em;
-  outline: none;
   -webkit-appearance: none;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  color: $White;
   background-color: $darkPurple;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  color: $White;
+  font-size: 2.5em;
+  height: 100%;
+  outline: none;
+  width: 20%;
 }
 
 .total-amount-room-service-today {
-  width: 300px;
   height: 100px;
+  width: 300px;
 }
 
 #rooms {
@@ -351,13 +334,12 @@ section {
 .total-amount-order-service-today,
 .total-amount-order-service-ever-background,
 .booking-search-rooms-background {
-  height: 100%;
-  width: 25%;
   background-color: $lightPurpleBackground;
   border-radius: 5px;
-  // padding: 5px;
+  height: 100%;
   margin: 20px 10px;
   padding: 10px;
+  width: 25%;
 }  
 
 .date-with-most-rooms-avail {
@@ -374,9 +356,8 @@ section {
 }
 
 .individual-room {
-  // padding: 10px 0px;
-  text-align: center;
-  color: $White;
+  border-bottom: 2px solid $White;
   border-top: 2px solid $White;
-  border-bottom: 2px solid #EAE7EB;
+  color: $White;
+  text-align: center;
 }
