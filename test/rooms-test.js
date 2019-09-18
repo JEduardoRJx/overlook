@@ -93,4 +93,21 @@ describe('Rooms', () => {
     expect(rooms.dateWithMostRoomsAvail).to.equal('2019/10/19');
   });
 
+  it('should set rooms available', () => {
+    rooms.setRoomsAvailable('2019/10/18');
+    expect(rooms.roomsAvailableForSpecificDate.length).to.deep.equal(19);
+  });
+
+  it ('should select a room', () => {
+    rooms.selectRoom(5);
+    expect(rooms.room).to.deep.equal({
+      number: 5,
+      roomType: 'junior suite',
+      bidet: false,
+      bedSize: 'king',
+      numBeds: 2,
+      costPerNight: 246.65
+    });
+  });
+
 });
