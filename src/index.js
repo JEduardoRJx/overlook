@@ -40,30 +40,30 @@ Promise.all([usersResponse, roomsResponse, bookingResponse, roomServiceResponse]
   .catch(error => console.log(error));
 
 //Hide all the sections besides the MAIN section on page load
-$('#main').show().siblings('section').hide();
 
-//Tab transitions
-$('.nav-icons').on('click', function () {
-  $(this).addClass('tab-active');
-  $(this).siblings().removeClass('tab-active');
-  let attrValue = $(this).attr('href');
-  $(attrValue).show().siblings('section').hide();
-});
+function hideSectionsBesidesMain() {
+  domUpdates.hideSectionsBesidesMain()
+}
+
+function tabTransitions() {
+  domUpdates.tabTransitions()
+}
 
 
 let getDate = () => {
   let date = new Date();
-  date = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+  date = domUpdates.breakDownDate(date)
   date = date.split('/').map(num => (num < 10) ? '0' + num : num).join('/');
   return date;
 }
-// loadTabs()
 
 function loadTabs(hotelData) {
   main = new Main(hotelData);
   orders = new Orders(hotelData);
   rooms = new Rooms(hotelData);
   customers = new Customers(hotelData);
+  hideSectionsBesidesMain();
+  tabTransitions();
   displayRoomInfo(rooms);
   getTodaysTotalRevenue(rooms, orders);
   displayCustomersAside(customers);
