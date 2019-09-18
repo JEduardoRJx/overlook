@@ -13,8 +13,9 @@ describe('Orders', () => {
     expect(Orders).to.be.a('function');
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('should hold all orders', () => {
+    expect(orders.orders).to.be.a('array');
+    expect(orders.orders.length).to.equal(20)
   });
 
   it.skip('should be a function', () => {
