@@ -89,6 +89,7 @@ aside {
 h2 {
   font-size: 2em;
   text-align: center;
+  color: #EAE7EB;
 }
 
 h3 {
@@ -119,16 +120,13 @@ form {
   margin-bottom: 10px;  
 }
 
-.add-customer-input,
-.room-service-any-day-input {
-  border-radius: 5px 0 0 5px;
-}
-
 .search-customer-input,
 .add-customer-input,
-.room-service-any-day-input {
+.room-service-any-day-input,
+.booking-service-any-day-input {
   font-size: 1.25em;
   text-align: center;
+  border-radius: 5px 0 0 5px;
 }
 
 .customer-label {
@@ -140,7 +138,10 @@ form {
 .booking-room-search-any-day-wrapper {
   display: flex;
   height: 40px;
-  // margin: 15px 0;
+}
+
+.booking-room-search-any-day-wrapper {
+  margin-bottom: 10px;
 }
 
 .add-customer-btn {
@@ -263,6 +264,10 @@ section {
   color: #EAE7EB;
 }
 
+.individual-room {
+  height: 100px;
+}
+
 
 
 #customer {
@@ -346,6 +351,10 @@ section {
   // padding: 5px;
   margin: 20px 10px;
   padding: 10px;
+}  
+
+.date-with-most-rooms-avail {
+  margin-top: 20px
 }
 
 .booking-search-rooms-result {
