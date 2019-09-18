@@ -13,5 +13,8 @@ describe('Customers', () => {
     expect(Customers).to.be.a('function');
   });
 
+  it('should hold all the customer data', () => {
+    expect(customers.allCustomers.length).to.equal(20);
+  });
 
 });
