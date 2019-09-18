@@ -1,10 +1,6 @@
 import $ from 'jquery';
-// import './css/base.scss';
-import Rooms from '../src/rooms.js';
-// import Orders from '../src/rooms.js';
 
 export default {
-
 
   breakDownDate(date) {
     return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
@@ -30,7 +26,7 @@ export default {
   },
   
   displayTotalRoomsAvailable(totalRoomsAvail) {
-    $('.total-rooms-available').text(totalRoomsAvail)
+    $('.total-rooms-available').text(totalRoomsAvail);
   },
 
   displayPercentRoomsOccupied(percentRoomsOccupied) {
@@ -43,9 +39,9 @@ export default {
 
   displayAllCustomers(customers) {
     customers.allCustomers.forEach(customer => {
-      $('.all-customers').append(`<div class="individual-customer" id="${customer.id}">${customer.name}</div>`)
+      $('.all-customers').append(`<div class="individual-customer" id="${customer.id}">${customer.name}</div>`);
     });
-searchCustomer);
+    $('.search-customer-input').keyup(this.searchCustomer);
   },
 
   searchCustomer() {
@@ -60,7 +56,7 @@ searchCustomer);
 
   displayNoCustomer() {
     $('.no-customer').show();
-    $('.display-customer-tab').hide()
+    $('.display-customer-tab').hide();
   },
 
   displayCustomerInformationCustomerTab(customerName) {
@@ -70,10 +66,9 @@ searchCustomer);
   },
 
   displayAllOrdersForRoomServiceToday(allOrders) {
-    
     allOrders.forEach(order => {
       $('.order-service-today-background').append(`<div class="individual-order">${order.food}</div>`)
-    })
+    });
   },
 
   displayRoomServiceOrdersAnyDay(ordersAnyDay) {
@@ -85,7 +80,6 @@ searchCustomer);
 
   displayAllDatesAndDollarAmountsRoomServiceForCustomer(datesAndDollarAmounts) {
     $('.display-dates-and-dollar-amounts').children().remove();
-
     datesAndDollarAmounts.forEach(day => {
       $('.display-dates-and-dollar-amounts').append(`<div class='individual-day-dollar-amount'>${day.date} = $${day.totalCost}</div>`);
     })
@@ -146,6 +140,5 @@ searchCustomer);
   //     rooms.selectRoom(roomID)
   //   });
   // }
-
 
 }
