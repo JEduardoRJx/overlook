@@ -130,7 +130,7 @@ function addCustomer(customers) {
       if($('.add-customer-input').val() !== '') {
         customers.addCustomer($('.add-customer-input').val())
         $('.add-customer-input').val('');
-        domUpdates.displayCustomerInformation(customers.customer.name)
+        domUpdates.displayCustomerInformationCustomerTab(customers.customer.name);
       }
     });
   });
