@@ -109,5 +109,4 @@ describe('Rooms', () => {
       costPerNight: 246.65
     });
   });
-
 });
