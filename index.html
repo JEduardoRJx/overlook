@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>OverLook</title>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="img" alt="Grand Budapest Hotel View"></div>
+    <nav>
+      <h1>Grand Budapest Hotel</h1>
+      <div class="nav-wrapper">
+        <a class="nav-icons main-icon tab-active" href="#main">Main</a>
+        <a class="nav-icons orders-icon" href="#orders">Orders</a>
+        <a class="nav-icons rooms-icon" href="#rooms">Rooms</a>
+        <a class="nav-icons customer-icon" href="#customer">Customer</a>
+      </div>
+    </nav>
+    <main>
+      <aside id="aside">
+        <div class='aside-background'>
+          <h2 class="todays-date"></h2>
+          <form>
+            <div class="add-customer-wrapper">
+              <input class="add-customer-input" type="text" placeholder="Add Customer" maxlength="30">
+              <button class="add-customer-btn" type="button">+</button>
+            </div>
+            <input class="search-customer-input" type="text" placeholder="Search Customer" maxlength="30">
+          </form>
+          <h2 class="customer-label">Customers</h2>
+          <div class="all-customers"></div>
+        </div>
+      </aside>
+      <section class="section-active main-section" id="main">
+        <div class="display-customer-name-wrapper">
+          <h2>Viewing <span class="display-name-customer-tab">---</span></h2>
+        </div>
+        <div class="main-room-wrapper">
+          <div class="total-rooms-available-background">
+            <h2 class="total-rooms-available"></h2>
+            <h3>Total Rooms Available</h3>
+          </div>
+          <div class="percent-rooms-background">
+            <h2 class="percent-rooms-occupied"></h2>
+            <h3>Percent Rooms Occupied</h3>
+          </div>
+        </div>
+        <div class="total-revenue-background">
+          <h2 class="total-revenue"></h2>
+          <h3>Total Revenue</h3>
+        </div>
+      </section>
+      <section id="orders">
+        <div class="order-service-today-background">
+          <h3 class="search-for-room-service">Search for Room Service</h3>
+          <div class="room-service-any-day-wrapper">
+            <input class="room-service-any-day-input" type="text" placeholder="YYYY/MM/DD" maxlength="30">
+            <button class="room-service-any-day-btn" type="button">+</button>
+          </div>
+          <div class="display-order-service-any-day"></div>
+        </div>
+        <div class="dates-and-dollar-amounts-background">
+          <h3 class="customer-room-service">Customers Room Service</h3>
+          <div class="display-dates-and-dollar-amounts"></div>
+        </div>
+        <div class="total-amount-order-service-today">
+          <h3 class="display-amount-room-service-today">$0</h3>
+          <h3>Total Room Service Today</h3>
+        </div>
+        <div class="total-amount-order-service-ever-background">
+          <h3 class="display-amount-room-service-ever">$0</h3>
+          <h3>Total Room Service Ever</h3>
+        </div>
+      </section>
+      <section id="rooms">
+        <div class="room-default-info-background">
+          <h2 class="most-popular-booking-date"></h2>
+          <h3>Most Popular Booking Date</h3>
+          <h2 class="date-with-most-rooms-avail"></h2>
+          <h3>Has Most Rooms Avail.</h3>
+        </div>
+        <div class="booking-search-rooms-background">
+            <div class="booking-room-search-any-day-wrapper">
+              <input class="booking-service-any-day-input" type="text" placeholder="YYYY/MM/DD" maxlength="10">
+              <button class="booking-service-any-day-btn" type="button">+</button>
+            </div>
+          <div class="booking-search-rooms-result"></div>
+        </div>
+        <div class="room-customer-info-background">
+          <div></div>
+          <h3></h3>
+        </div>
+        <div class="room-create-booking-info-background">
+          <div></div>
+          <h3></h3>
+        </div>
+      </section>
+      <section id="customer">
+        <div class="no-customer">
+          <h2 class="select-customer">Please select or add a customer</h2>
+        </div class="display-name-background">
+        <div class="display-customer-tab">
+          <h2 class="display-name-customer-tab"></h2>
+        </div>
+      </section>
+    </main>
+    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+  <script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
