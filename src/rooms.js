@@ -7,6 +7,7 @@ class Rooms {
     this.customerID = null;
     this.dateWithMostRoomsAvail;
     this.roomsAvailableForSpecificDate = [];
+    this.room = {};
   }
 
   getTotalBookingsToday(date) {
@@ -84,6 +85,11 @@ class Rooms {
     });
     // console.log(this.roomsAvailableForSpecificDate)r
   };
+
+  selectRoom(roomID) {
+    this.room = this.totalRooms.find(room => room.id === roomID);
+    console.log(this.room);
+  }
 }
 
 export default Rooms
