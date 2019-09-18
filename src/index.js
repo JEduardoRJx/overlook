@@ -89,13 +89,7 @@ function displayCustomersAside(customers) {
 }
 
 function searchCustomer() {
-  let inputVal = $('.search-customer-input').val().toUpperCase();
-  let allCustomers = Array.from($('.all-customers').children());
-  allCustomers.forEach(customer => {
-    if($(customer).text().toUpperCase().includes(inputVal)) {
-      $(customer).show(customer).siblings().hide();
-    }
-  });
+  domUpdates.searchCustomer()
 }
 
 function handleDisplayNoCustomer() {
