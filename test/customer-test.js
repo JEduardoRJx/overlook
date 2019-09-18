@@ -26,4 +26,9 @@ describe('Customers', () => {
     expect(customers.customer).to.deep.equal({id: 1, name: "Matilde Larson"});
   });
 
+  it('should be able to add a customer', () => {
+    customers.addCustomer('Pablo Sanchez');
+    expect(customers.customer).to.deep.equal({id: 21, name: 'Pablo Sanchez'});
+  });
+
 });
