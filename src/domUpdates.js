@@ -4,7 +4,6 @@ import Rooms from '../src/rooms.js';
 
 export default {
 
-  
   displayDate(date) {
     date = date.split('/');
     let dateFormat = `${date[1]}/${date[2]}/${date[0]}`;
@@ -76,6 +75,14 @@ export default {
     } else {
       $('.display-amount-room-service-ever').text(`$${totalAmountForRoomServiceEver}`);
     }
+  },
+
+  displayMostPopularBookingDate(mostPopularBookingDate) {
+    $('.most-popular-booking-date').text(mostPopularBookingDate);
+  },
+
+  displayDateWithMostRoomsAvail(dateWithMostRoomsAvail) {
+    $('.date-with-most-rooms-avail').text(dateWithMostRoomsAvail);
   }
 
 }

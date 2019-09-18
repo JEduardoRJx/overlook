@@ -37,7 +37,6 @@ class Orders {
     this.allDatesAndDollarAmountsRoomServiceForCustomer = this.orders.filter(order => {
       return order.userID === customerID;
     });
-    console.log(this.allDatesAndDollarAmountsRoomServiceForCustomer);
   }
 
   getAmountRoomServiceForCustomerToday(customerID) {
@@ -58,10 +57,7 @@ class Orders {
       }
     })
     this.totalAmountRoomServiceForCustomerEver = parseFloat(total.toFixed(2));
-    console.log(this.totalAmountRoomServiceForCustomerEver);
   }
-
-
 }
 
 export default Orders
