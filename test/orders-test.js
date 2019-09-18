@@ -66,8 +66,8 @@ describe('Orders', () => {
     expect(orders.customerID).to.equal(14);
   });
 
-  it('should set all dates and dollar amouns for room service for a customer', () => {
-    orders.setCustomerID(14)
+  it('should set all dates and dollar amounts for room service for a customer', () => {
+    orders.setCustomerID(14);
     orders.setAllDatesAndDollarAmountsRoomServiceForCustomer(orders.customerID);
     expect(orders.allDatesAndDollarAmountsRoomServiceForCustomer ).to.deep.equal([
       {
@@ -79,8 +79,10 @@ describe('Orders', () => {
     ]);
   });
 
-  it.skip('', () => {
-    expect(orders).to.equal();
+  it('should set amount of room service for a customer for today', () => {
+    orders.setCustomerID(14);
+    orders.getAmountRoomServiceForCustomerToday(orders.customerID)
+    expect(orders.totalAmountRoomServiceForCustomerToday ).to.equal(0);
   });
 
   it.skip('', () => {
