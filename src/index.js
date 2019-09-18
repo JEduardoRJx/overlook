@@ -180,5 +180,3 @@ export function handleRooms(rooms, dUpdates) {
   rooms.getDateWithMostRoomsAvail();
   dUpdates.displayDateWithMostRoomsAvail(rooms.dateWithMostRoomsAvail);
 }
-
-

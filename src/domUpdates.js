@@ -4,7 +4,6 @@ import Rooms from '../src/rooms.js';
 
 export default {
 
-  
   displayDate(date) {
     date = date.split('/');
     let dateFormat = `${date[1]}/${date[2]}/${date[0]}`;
