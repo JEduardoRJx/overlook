@@ -1,6 +1,8 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
 // $background: linear-gradient(#FFF, transparent), url('https://download.hipwallpaper.com/desktop/1920/1080/90/81/HkxRbN.jpg') no-repeat 50% 50%;
-
+$darkPurple: #53405F;
+$White: #EAE7EB;
+$lightPurpleBackground: rgba(83, 64, 95, 0.5);
 
 * {
   font-family: 'Comfortaa', cursive;
@@ -26,7 +28,7 @@ nav {
   justify-content: space-between;
   // background-color: #53405F;
   height: 75px;
-  color: #EAE7EB;
+  color: $White;
 }
 
 h1 {
@@ -36,7 +38,7 @@ h1 {
   height: 100%;
   display: flex;
   align-items: center;
-  background-color: #53405F;
+  background-color: $darkPurple;
 }
 
 .nav-wrapper {
@@ -49,8 +51,8 @@ h1 {
   padding: 0px 15px;
   font-size: 2em;
   height: 100%;
-  background-color: #53405F;
-  color: #EAE7EB;
+  background-color: $darkPurple;
+  color: $White;
   align-items: center;
   display: flex;
   text-decoration:none;
@@ -58,7 +60,7 @@ h1 {
 
 .tab-active {
   background-color: transparent;
-  color: #53405F;
+  color: $darkPurple;
   font-weight: 700;
 }
 
@@ -78,9 +80,9 @@ aside {
 .aside-background {
   width: 100%;
   height: 100%;
-  background-color: rgba(83, 64, 95, 0.5);
+  background-color: $lightPurpleBackground;
   border-radius: 5px;
-  color: #EAE7EB;
+  color: $White;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -89,11 +91,11 @@ aside {
 h2 {
   font-size: 2em;
   text-align: center;
-  color: #EAE7EB;
+  color: $White;
 }
 
 h3 {
-  color: #EAE7EB;
+  color: $White;
   text-align: center;
 }
 
@@ -158,8 +160,8 @@ form {
   -webkit-appearance: none;
   border: none;
   border-radius: 0 5px 5px 0;
-  color: #EAE7EB;
-  background-color: #53405F;
+  color: $White;
+  background-color: $lightPurpleBackground;
 }
 
 section {
@@ -179,8 +181,8 @@ section {
   width: 80%;
   height: 10%;
   margin-bottom: 10px;
-  background-color: rgba(83, 64, 95, 0.5);
-  color: #EAE7EB;
+  background-color: $lightPurpleBackground;
+  color: $White;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,10 +200,10 @@ section {
 .total-rooms-available-background {
   width: 100%;
   height: 100%;
-  background-color: rgba(83, 64, 95, 0.5);
+  background-color: $lightPurpleBackground;
   border-radius: 5px;
   // padding: 10px;
-  color: #EAE7EB;
+  color: $White;
   margin: 10px 10px 10px 0px;
   text-align: center;
   display: flex;
@@ -219,10 +221,10 @@ section {
 .percent-rooms-background {
   width: 100%;
   height: 100%;
-  background-color: rgba(83, 64, 95, 0.5);
+  background-color: $lightPurpleBackground;
   border-radius: 5px;
   // padding: 10px;
-  color: #EAE7EB;
+  color: $White;
   margin: 10px 0px 10px 10px;
   text-align: center;
   display: flex;
@@ -234,10 +236,10 @@ section {
 .total-revenue-background {
   width: 100%;
   height: 50%;
-  background-color: rgba(83, 64, 95, 0.5);
+  background-color: $lightPurpleBackground;
   border-radius: 5px;
   // padding: 10px;
-  color: #EAE7EB;
+  color: $White;
   margin: 30px 0px 0px 0px;
   text-align: center;
   display: flex;
@@ -248,7 +250,7 @@ section {
 .all-customers {
   height: 100%;
   width: 100%;
-  border: 2px #EAE7EB solid;
+  border: 2px $White solid;
   border-radius: 5px;
   overflow: scroll;
 }
@@ -262,11 +264,11 @@ section {
   height: 75px;
   display: flex;
   align-items: center;
-  border-top: 1px #EAE7EB solid;
-  border-bottom: 1px #EAE7EB solid;
+  border-top: 1px $White solid;
+  border-bottom: 1px $White solid;
   justify-content: center;
   text-decoration: none;
-  color: #EAE7EB;
+  color: $White;
 }
 
 .individual-room {
@@ -284,12 +286,12 @@ section {
 
 .no-customer,
 .display-customer-tab {
-  color: #EAE7EB;
+  color: $White;
   font-size: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(83, 64, 95, 0.5);
+  background-color: $lightPurpleBackground;
   border-radius: 5px;
   // padding: 10px;
   width: 100%;
@@ -326,8 +328,8 @@ section {
   -webkit-appearance: none;
   border: none;
   border-radius: 0 5px 5px 0;
-  color: #EAE7EB;
-  background-color: #53405F;
+  color: $White;
+  background-color: $darkPurple;
 }
 
 .total-amount-room-service-today {
@@ -351,7 +353,7 @@ section {
 .booking-search-rooms-background {
   height: 100%;
   width: 25%;
-  background-color: rgba(83, 64, 95, 0.5);
+  background-color: $lightPurpleBackground;
   border-radius: 5px;
   // padding: 5px;
   margin: 20px 10px;
@@ -363,7 +365,7 @@ section {
 }
 
 .booking-search-rooms-result {
-  height: 100%;
+  height: 90%;
   width: 100%;
 }
 
@@ -374,7 +376,7 @@ section {
 .individual-room {
   // padding: 10px 0px;
   text-align: center;
-  color: #EAE7EB;
-  border-top: 2px solid #EAE7EB;
+  color: $White;
+  border-top: 2px solid $White;
   border-bottom: 2px solid #EAE7EB;
 }
