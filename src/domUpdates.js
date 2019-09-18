@@ -45,6 +45,7 @@ export default {
     customers.allCustomers.forEach(customer => {
       $('.all-customers').append(`<div class="individual-customer" id="${customer.id}">${customer.name}</div>`)
     });
+searchCustomer);
   },
 
   searchCustomer() {

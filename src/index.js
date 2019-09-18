@@ -85,12 +85,8 @@ function getTodaysTotalRevenue(rooms, orders) {
 
 function displayCustomersAside(customers) {
   domUpdates.displayAllCustomers(customers);
-  $('.search-customer-input').keyup(searchCustomer);
 }
 
-function searchCustomer() {
-  domUpdates.searchCustomer()
-}
 
 function handleDisplayNoCustomer() {
   if (Object.keys(customers.customer).length === 0) {
