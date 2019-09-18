@@ -83,6 +83,17 @@ export default {
 
   displayDateWithMostRoomsAvail(dateWithMostRoomsAvail) {
     $('.date-with-most-rooms-avail').text(dateWithMostRoomsAvail);
+  },
+
+  displayBookingSearch(rooms) {
+      $('.booking-service-any-day-btn').on('click', () => {
+        if($('.booking-service-any-day-input').val() !== '') {
+          let date = $('.booking-service-any-day-input').val();
+          rooms.setRoomsAvailable(date)
+          // orders.getRoomServiceOrdersAnyDay(date);
+          // displayRoomServiceOrdersAnyDay(orders.roomServiceOrdersAnyDay);
+        }
+      });
   }
 
 }
