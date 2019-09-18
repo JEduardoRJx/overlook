@@ -315,3 +315,15 @@ section {
   height: 100%;
   width: 100%;
 }
+
+.booking-search-rooms-result {
+  overflow: scroll;
+}
+
+.individual-room {
+  padding: 10px 0px;
+  text-align: center;
+  color: #EAE7EB;
+  border-top: 2px solid #EAE7EB;
+  border-bottom: 2px solid #EAE7EB;
+}

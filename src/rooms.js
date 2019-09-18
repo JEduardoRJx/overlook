@@ -3,10 +3,11 @@ class Rooms {
     this.totalRooms = data.rooms;
     this.totalBookings = data.bookings;
     this.roomsBookedToday = [];
-    this.bookingsToday = [];
     this.todaysTotalRevenue = 0;
     this.customerID = null;
     this.dateWithMostRoomsAvail;
+    this.roomsAvailableForSpecificDate = [];
+    this.room = {};
   }
 
   getTotalBookingsToday(date) {
@@ -72,6 +73,23 @@ class Rooms {
     })[0];
   }
 
+  setRoomsAvailable(date) {
+    let roomsBooked = this.totalBookings.filter(book => book.date === date);
+    this.roomsAvailableForSpecificDate = this.totalRooms;
+    this.roomsAvailableForSpecificDate.forEach(room => {
+      roomsBooked.forEach(booked => {
+        if (room.number === booked.roomNumber) {
+          this.totalRooms.splice(this.totalRooms.indexOf(room), 1);
+        }
+      });
+    });
+    // console.log(this.roomsAvailableForSpecificDate)r
+  };
+
+  selectRoom(roomID) {
+    this.room = this.totalRooms.find(room => room.id === roomID);
+    console.log(this.room);
+  }
 }
 
 export default Rooms

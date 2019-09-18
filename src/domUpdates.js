@@ -1,6 +1,7 @@
 import $ from 'jquery';
 // import './css/base.scss';
 import Rooms from '../src/rooms.js';
+// import Orders from '../src/rooms.js';
 
 export default {
 
@@ -83,6 +84,39 @@ export default {
 
   displayDateWithMostRoomsAvail(dateWithMostRoomsAvail) {
     $('.date-with-most-rooms-avail').text(dateWithMostRoomsAvail);
-  }
+  },
+
+  displayBookingSearch(rooms) {
+      $('.booking-service-any-day-btn').on('click', () => {
+        if($('.booking-service-any-day-input').val() !== '') {
+          let date = $('.booking-service-any-day-input').val();
+          rooms.setRoomsAvailable(date);
+          this.displayRoomsAvailable(rooms.roomsAvailableForSpecificDate);
+          $('.booking-service-any-day-input').val('');
+        }
+      });
+  },
+
+  displayRoomsAvailable(roomsAvailableForSpecificDate) {
+    $('.booking-search-rooms-result').children().remove();
+    roomsAvailableForSpecificDate.forEach(room => {
+    $('.booking-search-rooms-result').append(`<div class="individual-room" id="${room.number}">
+      <h3>${room.roomType.toUpperCase()}</h3>
+      <p>${room.bedSize.toUpperCase()} SIZE BED</p>
+      <p>Num. Beds ${room.numBeds}</p>
+      <p>Bidet: ${room.bidet}</p>
+      <p>$${room.costPerNight} per. Night</p>
+    </div>`)
+    });
+  },
+
+  // selectingARoom(rooms) {
+  //   $('.individual-room').on('click', () => {
+  //     console.log("hey2")
+  //     let roomID = parseInt(event.currentTarget.id);
+  //     rooms.selectRoom(roomID)
+  //   });
+  // }
+
 
 }
