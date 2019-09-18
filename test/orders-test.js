@@ -51,8 +51,29 @@ describe('Orders', () => {
     expect(orders.todaysTotalRevenue).to.equal(14.9);
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('should get all orders for room service today', () => {
+    orders.getRoomServiceOrdersAnyDay('2019/07/29');
+    expect(orders.roomServiceOrdersAnyDay.length).to.equal(1);
+  });
+
+  it.skip('should get room service orders for any day', () => {
+    expect(orders).to.equal();
+  });
+
+  it.skip('', () => {
+    expect(orders).to.equal();
+  });
+
+  it.skip('', () => {
+    expect(orders).to.equal();
+  });
+
+  it.skip('', () => {
+    expect(orders).to.equal();
+  });
+
+  it.skip('', () => {
+    expect(orders).to.equal();
   });
 
 
