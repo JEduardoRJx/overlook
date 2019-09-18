@@ -180,6 +180,7 @@ export function handleRooms(rooms, dUpdates) {
   rooms.getDateWithMostRoomsAvail();
   dUpdates.displayDateWithMostRoomsAvail(rooms.dateWithMostRoomsAvail);
   listenForBookingServiceSearch(rooms, domUpdates)
+  domUpdates.selectingARoom(rooms)
 }
 
 function listenForBookingServiceSearch(rooms, domUpdates) {
