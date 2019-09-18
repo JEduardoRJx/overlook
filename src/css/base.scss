@@ -91,6 +91,11 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  color: #EAE7EB;
+  text-align: center;
+}
+
 .todays-date {
   margin: 10px 0px;
 }
@@ -114,12 +119,14 @@ form {
   margin-bottom: 10px;  
 }
 
-.add-customer-input {
+.add-customer-input,
+.room-service-any-day-input {
   border-radius: 5px 0 0 5px;
 }
 
 .search-customer-input,
-.add-customer-input {
+.add-customer-input,
+.room-service-any-day-input {
   font-size: 1.25em;
   text-align: center;
 }
@@ -197,7 +204,8 @@ section {
 }
 .total-rooms-available,
 .percent-rooms-occupied,
-.total-revenue {
+.total-revenue, .display-amount-room-service-today,
+.display-amount-room-service-ever {
   font-size: 3.5em;
   // margin-bottom: 10px
 }
@@ -240,7 +248,8 @@ section {
 }
 
 .individual-customer,
-.individual-order {
+.individual-order,
+.individual-day-dollar-amount {
   font-size: 1.5em;
   text-align: center;
   // background-color: blue;
@@ -282,19 +291,19 @@ section {
   display: flex;
 }
 
-// .room-service-today-background,
-// .dates-and-dollar-amounts-background {
-//   height: 100%;
-//   width: 300px;
-//   background-color: rgba(83, 64, 95, 0.5);
-//   border-radius: 5px;
-//   overflow: scroll;
-//   padding: 5px;
-// }
+.display-order-service-any-day,
+.customer-room-service,
+.display-amount-room-service-today {
+  margin-bottom: 10px;
+}
 
 .room-service-any-day-wrapper {
   display: flex;
   height: 40px;
+}
+
+.search-for-room-service {
+  margin-bottom: 10px;
 }
 
 .room-service-any-day-btn,
@@ -335,7 +344,8 @@ section {
   background-color: rgba(83, 64, 95, 0.5);
   border-radius: 5px;
   // padding: 5px;
-  // margin: 5px;
+  margin: 20px 10px;
+  padding: 10px;
 }
 
 .booking-search-rooms-result {
