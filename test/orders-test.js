@@ -15,7 +15,7 @@ describe('Orders', () => {
 
   it('should hold all orders', () => {
     expect(orders.orders).to.be.a('array');
-    expect(orders.orders.length).to.equal(20)
+    expect(orders.orders.length).to.equal(20);
   });
 
   it('should start day with 0 revenue', () => {
@@ -47,7 +47,7 @@ describe('Orders', () => {
   });
 
   it('should calculate today\'s total revenue', () => {
-    orders.calculateTodaysTotalRevenue('2019/07/29')
+    orders.calculateTodaysTotalRevenue('2019/07/29');
     expect(orders.todaysTotalRevenue).to.equal(14.9);
   });
 
@@ -81,13 +81,13 @@ describe('Orders', () => {
 
   it('should set amount of room service for a customer for today', () => {
     orders.setCustomerID(14);
-    orders.getAmountRoomServiceForCustomerToday(orders.customerID)
+    orders.getAmountRoomServiceForCustomerToday(orders.customerID);
     expect(orders.totalAmountRoomServiceForCustomerToday ).to.equal(0);
   });
 
-  it.skip('', () => {
-    expect(orders).to.equal();
+  it('should get the total amount of room service for a customer ever', () => {
+    orders.setCustomerID(14);
+    orders.getTotalAmountRoomServiceForCustomerEver(orders.customerID)
+    expect(orders.totalAmountRoomServiceForCustomerEver).to.equal(14.9);
   });
-
-
 });
