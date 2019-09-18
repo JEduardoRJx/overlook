@@ -22,12 +22,12 @@ describe('Orders', () => {
     expect(orders.todaysTotalRevenue).to.equal(0);
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('all orders for room service today should start as an empty array', () => {
+    expect(orders.allOrdersForRoomServiceToday).to.be.a('array');
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('room service any other day should start as an empty array', () => {
+    expect(orders.roomServiceOrdersAnyDay).to.be.a('array');
   });
 
   it.skip('should be a function', () => {
