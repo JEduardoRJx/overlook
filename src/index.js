@@ -87,7 +87,6 @@ function displayCustomersAside(customers) {
   domUpdates.displayAllCustomers(customers);
 }
 
-
 function handleDisplayNoCustomer() {
   if (Object.keys(customers.customer).length === 0) {
     domUpdates.displayNoCustomer();
@@ -111,7 +110,7 @@ function addCustomer(customers) {
   $(document).ready(function() {
     $('.add-customer-btn').on('click', () => {
       if($('.add-customer-input').val() !== '') {
-        customers.addCustomer($('.add-customer-input').val())
+        customers.addCustomer($('.add-customer-input').val());
         $('.add-customer-input').val('');
         domUpdates.displayCustomerInformationCustomerTab(customers.customer.name);
       }
@@ -119,7 +118,6 @@ function addCustomer(customers) {
   });
 }
 
-//ORDERS
 function handleOrders(orders) {
   displayAllordersForRoomService(orders, getDate());
   displayRoomServiceOrdersAnyDay(orders);
@@ -162,8 +160,8 @@ export function handleRooms(rooms, dUpdates) {
   dUpdates.displayMostPopularBookingDate(rooms.mostPopularBookingDate);
   rooms.getDateWithMostRoomsAvail();
   dUpdates.displayDateWithMostRoomsAvail(rooms.dateWithMostRoomsAvail);
-  listenForBookingServiceSearch(rooms, domUpdates)
-  // domUpdates.selectingARoom(rooms)
+  listenForBookingServiceSearch(rooms, domUpdates);
+  // domUpdates.selectingARoom(rooms);
 }
 
 function listenForBookingServiceSearch(rooms, domUpdates) {
