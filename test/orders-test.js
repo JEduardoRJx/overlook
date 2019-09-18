@@ -52,12 +52,13 @@ describe('Orders', () => {
   });
 
   it('should get all orders for room service today', () => {
-    orders.getRoomServiceOrdersAnyDay('2019/07/29');
-    expect(orders.roomServiceOrdersAnyDay.length).to.equal(1);
+    orders.getAllOrdersForRoomServiceToday('2019/07/29');
+    expect(orders.allOrdersForRoomServiceToday.length).to.equal(1);
   });
 
-  it.skip('should get room service orders for any day', () => {
-    expect(orders).to.equal();
+  it('should get room service orders for any day', () => {
+    orders.getRoomServiceOrdersAnyDay('2019/07/29');
+    expect(orders.roomServiceOrdersAnyDay.length).to.equal(1);
   });
 
   it.skip('', () => {
