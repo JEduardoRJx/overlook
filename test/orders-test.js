@@ -66,8 +66,17 @@ describe('Orders', () => {
     expect(orders.customerID).to.equal(14);
   });
 
-  it.skip('', () => {
-    expect(orders).to.equal();
+  it('should set all dates and dollar amouns for room service for a customer', () => {
+    orders.setCustomerID(14)
+    orders.setAllDatesAndDollarAmountsRoomServiceForCustomer(orders.customerID);
+    expect(orders.allDatesAndDollarAmountsRoomServiceForCustomer ).to.deep.equal([
+      {
+        userID: 14,
+        date: '2019/07/29',
+        food: 'Rustic Concrete Sandwich',
+        totalCost: 14.9
+      }
+    ]);
   });
 
   it.skip('', () => {
