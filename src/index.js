@@ -179,4 +179,9 @@ export function handleRooms(rooms, dUpdates) {
   dUpdates.displayMostPopularBookingDate(rooms.mostPopularBookingDate);
   rooms.getDateWithMostRoomsAvail();
   dUpdates.displayDateWithMostRoomsAvail(rooms.dateWithMostRoomsAvail);
+  listenForBookingServiceSearch(rooms, domUpdates)
+}
+
+function listenForBookingServiceSearch(rooms, domUpdates) {
+  domUpdates.displayBookingSearch(rooms, domUpdates);
 }
