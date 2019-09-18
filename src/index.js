@@ -71,7 +71,7 @@ function loadTabs(hotelData) {
   selectingACustomer(orders, rooms, customers);
   addCustomer(customers);
   handleOrders(orders);
-  handleRooms(rooms);
+  handleRooms(rooms, domUpdates);
 }
 
 function displayRoomInfo(rooms) {
@@ -174,11 +174,11 @@ function displayTotalAmountRoomServiceForCustomerEver(orders, customerID) {
   domUpdates.displayTotalRoomServiceAmountEver(orders.totalAmountRoomServiceForCustomerEver);
 }
 
-function handleRooms(rooms) {
+export function handleRooms(rooms, dUpdates) {
   rooms.getMostPopularBookingDate();
-  domUpdates.displayMostPopularBookingDate(rooms.mostPopularBookingDate);
+  dUpdates.displayMostPopularBookingDate(rooms.mostPopularBookingDate);
   rooms.getDateWithMostRoomsAvail();
-  domUpdates.displayDateWithMostRoomsAvail(rooms.dateWithMostRoomsAvail);
+  dUpdates.displayDateWithMostRoomsAvail(rooms.dateWithMostRoomsAvail);
 }
 
 
