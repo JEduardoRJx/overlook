@@ -138,7 +138,10 @@ form {
 .booking-room-search-any-day-wrapper {
   display: flex;
   height: 40px;
-  // margin: 15px 0;
+}
+
+.booking-room-search-any-day-wrapper {
+  margin-bottom: 10px;
 }
 
 .add-customer-btn {
@@ -259,6 +262,10 @@ section {
   justify-content: center;
   text-decoration: none;
   color: #EAE7EB;
+}
+
+.individual-room {
+  height: 100px;
 }
 
 
