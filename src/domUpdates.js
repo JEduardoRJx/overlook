@@ -5,6 +5,24 @@ import Rooms from '../src/rooms.js';
 
 export default {
 
+
+  breakDownDate(date) {
+    return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+  },
+
+  hideSectionsBesidesMain() {
+    $('#main').show().siblings('section').hide();
+  },
+
+  tabTransitions() {
+    $('.nav-icons').on('click', function () {
+      $(this).addClass('tab-active');
+      $(this).siblings().removeClass('tab-active');
+      let attrValue = $(this).attr('href');
+      $(attrValue).show().siblings('section').hide();
+    });
+  },
+
   displayDate(date) {
     date = date.split('/');
     let dateFormat = `${date[1]}/${date[2]}/${date[0]}`;
