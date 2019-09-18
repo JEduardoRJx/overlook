@@ -15,9 +15,6 @@ import Rooms from '../src/rooms.js';
 import Orders from '../src/orders.js';
 import Customers from '../src/customers.js';
 
-import sampleData from '../src/sampleData.js'
-
-
 console.log('This is the JavaScript entry file - your code begins here.');
 //CODE BELOW
 let usersResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users').then(response => response.json());
@@ -26,7 +23,6 @@ let bookingResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/
 let roomServiceResponse = fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices').then(response => response.json());
 let hotelData = {users: [], rooms: [], bookings: [], roomServices: []};
 let main, rooms, orders, customers;
-
 
 Promise.all([usersResponse, roomsResponse, bookingResponse, roomServiceResponse])
   .then(data => {
@@ -38,24 +34,6 @@ Promise.all([usersResponse, roomsResponse, bookingResponse, roomServiceResponse]
   })
   .then(hotelData => loadTabs(hotelData))
   .catch(error => console.log(error));
-
-//Hide all the sections besides the MAIN section on page load
-
-function hideSectionsBesidesMain() {
-  domUpdates.hideSectionsBesidesMain()
-}
-
-function tabTransitions() {
-  domUpdates.tabTransitions()
-}
-
-
-let getDate = () => {
-  let date = new Date();
-  date = domUpdates.breakDownDate(date)
-  date = date.split('/').map(num => (num < 10) ? '0' + num : num).join('/');
-  return date;
-}
 
 function loadTabs(hotelData) {
   main = new Main(hotelData);
@@ -72,6 +50,21 @@ function loadTabs(hotelData) {
   addCustomer(customers);
   handleOrders(orders);
   handleRooms(rooms, domUpdates);
+}
+
+let getDate = () => {
+  let date = new Date();
+  date = domUpdates.breakDownDate(date)
+  date = date.split('/').map(num => (num < 10) ? '0' + num : num).join('/');
+  return date;
+}
+
+function hideSectionsBesidesMain() {
+  domUpdates.hideSectionsBesidesMain()
+}
+
+function tabTransitions() {
+  domUpdates.tabTransitions()
 }
 
 function displayRoomInfo(rooms) {
