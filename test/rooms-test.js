@@ -78,4 +78,9 @@ describe('Rooms', () => {
     expect(rooms.todaysTotalRevenue).to.equal(246.65);
   });
 
+  it('should set the customer id', () => {
+    rooms.setCustomerID(100);
+    expect(rooms.customerID).to.equal(100);
+  });
+
 });
