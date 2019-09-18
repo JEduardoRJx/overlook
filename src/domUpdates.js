@@ -92,6 +92,7 @@ export default {
           let date = $('.booking-service-any-day-input').val();
           rooms.setRoomsAvailable(date);
           this.displayRoomsAvailable(rooms.roomsAvailableForSpecificDate);
+          $('.booking-service-any-day-input').val('');
         }
       });
   },
@@ -100,14 +101,22 @@ export default {
     $('.booking-search-rooms-result').children().remove();
     roomsAvailableForSpecificDate.forEach(room => {
     $('.booking-search-rooms-result').append(`<div class="individual-room" id="${room.number}">
-    <h3>${room.roomType.toUpperCase()}</h3>
-    <p>${room.bedSize.toUpperCase()} SIZE BED</p>
-    <p>Num. Beds ${room.numBeds}</p>
-    <p>Bidet: ${room.bidet}</p>
-    <p>$${room.costPerNight} per. Night</p>
+      <h3>${room.roomType.toUpperCase()}</h3>
+      <p>${room.bedSize.toUpperCase()} SIZE BED</p>
+      <p>Num. Beds ${room.numBeds}</p>
+      <p>Bidet: ${room.bidet}</p>
+      <p>$${room.costPerNight} per. Night</p>
     </div>`)
     });
-  }
+  },
+
+  // selectingARoom(rooms) {
+  //   $('.individual-room').on('click', () => {
+  //     console.log("hey2")
+  //     let roomID = parseInt(event.currentTarget.id);
+  //     rooms.selectRoom(roomID)
+  //   });
+  // }
 
 
 }
