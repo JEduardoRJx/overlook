@@ -30,8 +30,8 @@ describe('Orders', () => {
     expect(orders.roomServiceOrdersAnyDay).to.be.a('array');
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('customerID should start as null', () => {
+    expect(Orders).to.equal(null);
   });
 
   it.skip('should be a function', () => {
