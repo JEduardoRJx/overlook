@@ -46,8 +46,9 @@ describe('Orders', () => {
     expect(orders.totalAmountRoomServiceForCustomerEver).to.equal(0);
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('should calculate today\'s total revenue', () => {
+    orders.calculateTodaysTotalRevenue('2019/07/29')
+    expect(orders.todaysTotalRevenue).to.equal(14.9);
   });
 
   it.skip('should be a function', () => {
