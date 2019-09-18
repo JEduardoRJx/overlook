@@ -61,8 +61,9 @@ describe('Orders', () => {
     expect(orders.roomServiceOrdersAnyDay.length).to.equal(1);
   });
 
-  it.skip('', () => {
-    expect(orders).to.equal();
+  it('should set customer id', () => {
+    orders.setCustomerID(14);
+    expect(orders.customerID).to.equal(14);
   });
 
   it.skip('', () => {
