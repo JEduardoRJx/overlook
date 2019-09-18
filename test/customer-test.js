@@ -17,4 +17,13 @@ describe('Customers', () => {
     expect(customers.allCustomers.length).to.equal(20);
   });
 
+  it('customer should start with an empty object', () => {
+    expect(customers.customer).to.deep.equal({});
+  });
+
+  it('should be able to select a customer', () => {
+    customers.selectCustomer(1);
+    expect(customers.customer).to.deep.equal({id: 1, name: "Matilde Larson"});
+  });
+
 });
