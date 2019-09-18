@@ -11,8 +11,8 @@ class Rooms {
   }
 
   getTotalBookingsToday(date) {
-    this.bookingsToday = this.totalBookings.filter(booked => booked.date === date)
-    return this.bookingsToday.length
+    this.bookingsToday = this.totalBookings.filter(booked => booked.date === date);
+    return this.bookingsToday.length;
   }
 
   getTotalRoomsAvailableToday(date) {
@@ -42,7 +42,7 @@ class Rooms {
   }
 
   setCustomerID(customerID) {
-    this.customerID = customerID
+    this.customerID = customerID;
   }
   
   getMostPopularBookingDate() {

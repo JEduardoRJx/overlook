@@ -18,10 +18,6 @@ class Customers {
     this.allCustomers.push(newCustomer);
     this.selectCustomer(newCustomer.id);
   }
-
-
-
-
 }
 
 export default Customers

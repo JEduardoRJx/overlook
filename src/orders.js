@@ -5,7 +5,7 @@ class Orders {
     this.allOrdersForRoomServiceToday = [];
     this.roomServiceOrdersAnyDay = [];
     this.customerID = null;
-    this.allDatesAndDollarAmountsRoomServiceForCustomer = []
+    this.allDatesAndDollarAmountsRoomServiceForCustomer = [];
     this.totalAmountRoomServiceForCustomerToday = 0;
     this.totalAmountRoomServiceForCustomerEver = 0;
   }
@@ -18,7 +18,7 @@ class Orders {
       return acc;
     }, 0);
     this.todaysTotalRevenue  = parseFloat(this.todaysTotalRevenue .toFixed(2));
-    return this.todaysTotalRevenue ;
+    return this.todaysTotalRevenue;
   }
 
   getAllOrdersForRoomServiceToday(date) {
@@ -30,7 +30,7 @@ class Orders {
   }
 
   setCustomerID(customerID) {
-    this.customerID = customerID
+    this.customerID = customerID;
   }
 
   setAllDatesAndDollarAmountsRoomServiceForCustomer(customerID) {
