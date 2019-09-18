@@ -1,6 +1,7 @@
 import $ from 'jquery';
 // import './css/base.scss';
 import Rooms from '../src/rooms.js';
+// import Orders from '../src/rooms.js';
 
 export default {
 
@@ -89,11 +90,24 @@ export default {
       $('.booking-service-any-day-btn').on('click', () => {
         if($('.booking-service-any-day-input').val() !== '') {
           let date = $('.booking-service-any-day-input').val();
-          rooms.setRoomsAvailable(date)
-          // orders.getRoomServiceOrdersAnyDay(date);
-          // displayRoomServiceOrdersAnyDay(orders.roomServiceOrdersAnyDay);
+          rooms.setRoomsAvailable(date);
+          this.displayRoomsAvailable(rooms.roomsAvailableForSpecificDate);
         }
       });
+  },
+
+  displayRoomsAvailable(roomsAvailableForSpecificDate) {
+    $('.booking-search-rooms-result').children().remove();
+    roomsAvailableForSpecificDate.forEach(room => {
+    $('.booking-search-rooms-result').append(`<div class="individual-room" id="${room.number}">
+    <h3>${room.roomType.toUpperCase()}</h3>
+    <p>${room.bedSize.toUpperCase()} SIZE BED</p>
+    <p>Num. Beds ${room.numBeds}</p>
+    <p>Bidet: ${room.bidet}</p>
+    <p>$${room.costPerNight} per. Night</p>
+    </div>`)
+    });
   }
+
 
 }
