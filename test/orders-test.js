@@ -18,8 +18,8 @@ describe('Orders', () => {
     expect(orders.orders.length).to.equal(20)
   });
 
-  it.skip('should be a function', () => {
-    expect(Orders).to.be.a('function');
+  it('should start day with 0 revenue', () => {
+    expect(orders.todaysTotalRevenue).to.equal(0);
   });
 
   it.skip('should be a function', () => {
